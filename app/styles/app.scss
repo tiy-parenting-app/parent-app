@@ -2,5 +2,11 @@
 $roboto-font-path: '../assets/';
 
 // Materialize styles
+
+
+$mainIndigo: #00009c;
+
 @import "materialize";
-@import "_welcome";
+@import "guest-view";
+@import "welcome";
+@import "master-styles";

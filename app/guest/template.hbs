@@ -1,4 +1,22 @@
-
-{{outlet}}
-
-Can you see this?
+<div class="app">
+  <nav>
+    <div class="nav-wrapper main-indigo">
+      <a href="#" class="brand-logo center">Parent</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          {{#link-to 'guest.login'}}
+          Sign in
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'guest.register'}}
+          Register
+          {{/link-to}}
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    {{outlet}}
+  </div>
+</div>
