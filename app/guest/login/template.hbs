@@ -1,1 +1,30 @@
+<div class="login-container">
+  <div class="row">
+    <div class="login-card__title col s12 center-align">Login Below</div>
+  </div>
+
+<div class="row">
+  {{!-- {{#simple-form }} --}}
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="form-action center-align">
+        <button class="btn col s12 login-btn btn-large"><i class="fa fa-arrow-right"></i></button>
+        <button class="btn forgot-btn">Forgot your password?</button>
+      </div>
+    </form>
+    {{!-- {{/simple-form}} --}}
+  </div>
+  </div>
+
 {{outlet}}

@@ -1,5 +1,6 @@
 $blue: #6bb9c2;
 $other-blue: #1642e6;
+$button-green: #3eda9a;
 
 .card {
   // box-shadow: none;
@@ -17,8 +18,8 @@ $other-blue: #1642e6;
 }
 
 
-.register-btn, .login-btn {
-  background: #3eda9a;
+.to-register, .to-login {
+  background: $button-green;
   margin-left: 0.5rem;
   font-weight: 400;
 }
