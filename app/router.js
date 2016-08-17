@@ -23,6 +23,10 @@ Router.map(function() {
       this.route('child');
     });
   });
+  this.route('grid', function() {
+    this.route('parent-sitter');
+    this.route('parent-parent');
+  });
 });
 
 export default Router;
