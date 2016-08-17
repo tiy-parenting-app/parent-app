@@ -26,7 +26,7 @@ Router.map(function() {
     });
   });
   this.route('grid', function() {
-    this.route('parent-sitter');
+    this.route('parent-sitter', { path: '/sitters' });
     this.route('parent-parent');
   });
 });
