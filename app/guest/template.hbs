@@ -2,7 +2,9 @@
   <main>
     <nav>
       <div class="nav-wrapper main-indigo">
-        <a href="#" class="brand-logo center">Parent</a>
+        {{#link-to class="brand-logo center"}}
+        <i class="fa fa-child" aria-hidden="true"></i>
+        {{/link-to}}
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
             {{#link-to 'guest.login'}}

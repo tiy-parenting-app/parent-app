@@ -12,6 +12,17 @@ Router.map(function() {
     this.route('register');
     this.route('login');
   });
+  this.route('profile', function() {
+    this.route('view', function() {
+      this.route('sitter');
+      this.route('child');
+    });
+    this.route('edit', function() {
+      this.route('parent');
+      this.route('sitter');
+      this.route('child');
+    });
+  });
 });
 
 export default Router;
