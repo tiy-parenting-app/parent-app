@@ -9,7 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('guest', { path: '/' }, function() {
     this.route('welcome', { path: '/' });
-    this.route('register');
+    this.route('register', function() {
+      this.route('user-select');
+    });
     this.route('login');
   });
   this.route('profile', function() {
