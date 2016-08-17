@@ -1,18 +1,17 @@
-.card-container {
+.register-container {
   width: 50%;
   padding: 4rem 3rem;
   margin: auto;
-  // background: yellow;
   box-shadow: 0.2rem 0.2rem 0.4rem lightgray;
   border: 1px solid lightgray;
 }
 
-.card-card__title {
+.register-card__title {
   font-size: 2rem;
   text-transform: capitalize;
 }
 
-.forgot-btn {
+.back-btn {
   background: lightgray;
   margin-top: 2rem;
   font-weight: 300;
