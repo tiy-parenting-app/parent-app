@@ -4,7 +4,7 @@ $roboto-font-path: '../assets/';
 // Materialize styles
 
 
-$mainIndigo: #1642e6;
+$main: #03B462;
 
 @import "materialize";
 @import "master-styles";
@@ -15,3 +15,4 @@ $mainIndigo: #1642e6;
 @import "grid";
 @import "grid-parent-sitter";
 @import "parent-sitter";
+@import "user-select";

@@ -1,27 +1,37 @@
 $blue: #6bb9c2;
 $other-blue: #1642e6;
-$button-green: #3eda9a;
+$gray: #f5f5f5;
+$button-green: #4169E1;
+$gray-text: #2f2f2f;
 
 .card {
   // box-shadow: none;
-  border: 2px solid $mainIndigo;
+  border: 2px solid $main;
 }
 
+.hero {
+  width: 100%;
+  min-height: 85vh;
+  background-image: url('http://cdn.rentcafe.com/dmslivecafe/3/20100/Stock%20Family%20(1920x1080).jpg');
+  background-size: cover;
+  background-position: bottom-right;
+}
 .welcome-card {
   font-size: 1rem;
   margin: 5rem 0;
-  background: $other-blue;
+  background: rgba(#fff,.88);
   border: none;
-  color: white;
+  color: $gray-text;
   font-size: 1.5rem;
   font-weight: 200;
 }
 
 
 .to-register, .to-login {
-  background: $button-green;
+  background: #fff;
   margin-left: 0.5rem;
   font-weight: 400;
+  color: $main;
 }
 
 .small-card__action {
@@ -29,7 +39,7 @@ $button-green: #3eda9a;
 }
 
 .more, .card-title {
-  color: $mainIndigo;
+  color: $main;
   font-weight: 400;
 }
 
