@@ -30,6 +30,7 @@ Router.map(function() {
     this.route('parent-sitter', { path: '/sitters' });
     this.route('sitter-parent', { path: '/parents' })
     this.route('parent-parent', { path: '/playdates' });
+    this.route('parent-choices');
   });
 });
 

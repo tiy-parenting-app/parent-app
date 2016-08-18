@@ -1,0 +1,34 @@
+<div class="card-container">
+  <div class="row">
+    <div class="card-card__title col s12 center-align">Select The Option That Best Fits Your Needs</div>
+  </div>
+
+  <div class="row">
+    <p class="user-select">I Am Looking For</p>
+    <form action="#">
+
+      <div class="select">
+        <div class="user-image">
+          {{#link-to "grid.parent-sitter"}}
+          <img class="user" src="http://placekitten.com/400/400">
+          {{/link-to}}
+          <p>
+            <label for="test1">A Sitter</label>
+          </p>
+        </div>
+        <div class="user-image">
+          {{#link-to "grid.parent-sitter"}}
+          <img class="user" src="http://placekitten.com/400/400">
+          {{/link-to}}
+          <p>
+            <label for="test2">A Playdate</label>
+          </p>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{{outlet}}

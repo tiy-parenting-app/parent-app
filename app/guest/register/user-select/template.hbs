@@ -4,21 +4,23 @@
   </div>
 
   <div class="row">
-    <p class="user-select">I am A</p>
+    <p class="user-select">I Am A</p>
     <form action="#">
 
       <div class="select">
         <div class="user-img">
+          {{#link-to "grid.parent-sitter"}}
           <img class="user" src="http://placekitten.com/400/400">
+          {{/link-to}}
       <p>
-      <input name="group1" type="radio" id="test1" />
       <label for="test1">Parent</label>
     </p>
         </div>
        <div class="user-img">
+         {{#link-to "grid.parent-sitter"}}
         <img class="user" src="http://placekitten.com/400/400">
+        {{/link-to}}
      <p>
-      <input name="group1" type="radio" id="test2" />
       <label for="test2">Sitter</label>
     </p>
       </div>
