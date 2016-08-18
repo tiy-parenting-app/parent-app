@@ -28,10 +28,13 @@ $gray-text: #2f2f2f;
 
 
 .to-register, .to-login {
-  background: #fff;
+  background: $main;
   margin-left: 0.5rem;
   font-weight: 400;
-  color: $main;
+  color: #fff;
+  &:hover{
+    background: lighten($main, 6%);
+  }
 }
 
 .small-card__action {
