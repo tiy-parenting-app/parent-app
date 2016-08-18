@@ -1,3 +1,5 @@
+// These are the styles for both parent-sitter, and sitter-parent templates.
+
 $main: #03b462;
 
 a:hover {
@@ -6,6 +8,17 @@ a:hover {
 
 .sitter-card {
   border: 0;
+}
+
+.card-image-gradient {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(#fff,0), rgba(#373737,.34));
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .fa-star, .fa-star-half-o, .fa-star-o {
@@ -20,12 +33,44 @@ a:hover {
     }
 }
 
+.fa-map-pin {
+  color: blue;
+  font-size: 1.2rem;
+}
 
-.location-rating {
-  min-height: 13vh;
-  width: 100%;
+.fa-users {
+  color: blue;
+}
+
+.user-action-icons {
+  width: 90%;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  &__item {
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+  &__button{
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+}
+
+.family-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.family-info-2 {
+  display: flex;
+  justify-content: space-between;
 }
