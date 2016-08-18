@@ -1,38 +1,34 @@
 <div class="card-container">
   <div class="row">
-    <div class="card-card__title col s12 center-align">Please Select An Account Type That Fits You</div>
+    <div class="card-card__title col s12 center-align">Select The Option That Best Fits Your Needs</div>
   </div>
 
   <div class="row">
-    <p class="user-select">I Looking For</p>
+    <p class="user-select">I Am Looking For</p>
     <form action="#">
 
       <div class="select">
-        <div class="user-img">
+        <div class="user-image">
+          {{#link-to "grid.parent-sitter"}}
           <img class="user" src="http://placekitten.com/400/400">
-      <p>
-      <input name="group1" type="radio" id="test1" />
-      <label for="test1">A Sitter</label>
-    </p>
+          {{/link-to}}
+          <p>
+            <label for="test1">A Sitter</label>
+          </p>
         </div>
-       <div class="user-img">
-        <img class="user" src="http://placekitten.com/400/400">
-     <p>
-      <input name="group1" type="radio" id="test2" />
-      <label for="test2">A Playdate</label>
-    </p>
+        <div class="user-image">
+          {{#link-to "grid.parent-sitter"}}
+          <img class="user" src="http://placekitten.com/400/400">
+          {{/link-to}}
+          <p>
+            <label for="test2">A Playdate</label>
+          </p>
+        </div>
       </div>
-    </div>
 
-  </form>
+    </form>
 
   </div>
 </div>
-
-
-
-{{outlet}}
-
-
 
 {{outlet}}
