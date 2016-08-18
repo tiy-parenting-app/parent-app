@@ -18,6 +18,7 @@ Router.map(function() {
     this.route('view', function() {
       this.route('sitter');
       this.route('child');
+      this.route('parent');
     });
     this.route('edit', function() {
       this.route('parent');
@@ -27,7 +28,8 @@ Router.map(function() {
   });
   this.route('grid', function() {
     this.route('parent-sitter', { path: '/sitters' });
-    this.route('parent-parent');
+    this.route('sitter-parent', { path: '/parents' })
+    this.route('parent-parent', { path: '/playdates' });
     this.route('parent-choices');
   });
 });
