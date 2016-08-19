@@ -6,8 +6,8 @@ $roboto-font-path: '../assets/';
 
 $main: #03B462;
 
-@import "materialize";
 @import "variables";
+@import "materialize";
 @import "master-styles";
 @import "guest-view";
 @import "welcome";
