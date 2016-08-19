@@ -76,6 +76,7 @@
       margin: 0.25rem auto;
       i{
         color: #fff;
+        margin-left: 0.5rem;
       }
       &__like {
         background: #1158b6;
@@ -100,6 +101,29 @@
   }
   &__info {
     margin: 1.5rem 0;
+    min-height: 10rem;
   }
+}
 
+.profile-view-connections {
+  background: $gray;
+  width: 100%;
+  margin: 0.3rem 0;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  &__row {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__item {
+    width: calc(100%/8);
+    margin: 0 0.5rem;
+    text-align: center;
+    &__image {
+      width: 100%;
+    }
+    &__name {
+      text-align: center;
+    }
+  }
 }

@@ -1,36 +1,35 @@
-<div class="card-container">
-  <div class="row">
-    <div class="card-card__title col s12 center-align">Please Select An Account Type That Fits You</div>
-  </div>
 
-  <div class="row">
-    <p class="user-select">I Am A</p>
-    <form action="#">
-
-      <div class="select">
-        <div class="user-img">
-          {{#link-to "grid.parent-sitter"}}
-          <img class="user" src="http://placekitten.com/400/400">
-          {{/link-to}}
-      <p>
-      <label for="test1">Parent</label>
-    </p>
-        </div>
-       <div class="user-img">
-         {{#link-to "grid.parent-sitter"}}
-        <img class="user" src="http://placekitten.com/400/400">
-        {{/link-to}}
-     <p>
-      <label for="test2">Sitter</label>
-    </p>
-      </div>
+<div class="container">
+  <div class="card-container">
+    <div class="row">
+      <div class="card-card__title col s12 center-align">Please Select An Account Type That Fits You</div>
     </div>
+    <div class="row">
+      <p class="user-select">I Am A</p>
+      <form action="#">
 
-  </form>
-
+        <div class="select">
+          <div class="user-image">
+            {{#link-to "grid.parent-sitter"}}
+              <img class="user" src="http://placekitten.com/400/400">
+            {{/link-to}}
+            <p>
+              <label for="test1">Parent</label>
+            </p>
+          </div>
+          <div class="user-image">
+            {{#link-to "grid.parent-sitter"}}
+              <img class="user" src="http://placekitten.com/400/400">
+            {{/link-to}}
+            <p>
+              <label for="test2">Sitter</label>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
-
 
 
 {{outlet}}
