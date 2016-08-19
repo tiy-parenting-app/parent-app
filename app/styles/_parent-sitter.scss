@@ -6,6 +6,13 @@ a:hover {
   cursor: pointer;
 }
 
+.card-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
 .sitter-card {
   border: 0;
 }
@@ -19,6 +26,33 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.card-image {
+  width: 100%;
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  &__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    height: 100%;
+    // height: 20rem;
+    // width: 100%;
+    // height: 100%;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    display: inline;
+    padding-top: 100%;
+  }
+}
 }
 
 .fa-star, .fa-star-half-o, .fa-star-o {
