@@ -1,7 +1,5 @@
 // These are the styles for both parent-sitter, and sitter-parent templates.
-
 $main: #03b462;
-
 a:hover {
   cursor: pointer;
 }
@@ -9,7 +7,6 @@ a:hover {
 .sitter-card {
   border: 0;
 }
-
 .card-image-gradient {
   width: 100%;
   height: 100%;
@@ -20,28 +17,54 @@ a:hover {
   left: 0;
   right: 0;
 }
+.card-image {
+  width: 100%;
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    &::before {
+      content: "";
+      width: 100%;
+      display: block;
+      padding-top: 100%;
+    }
+  }
+}
 
-.fa-star, .fa-star-half-o, .fa-star-o {
+.card .card-image__wrapper {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.fa-star,
+.fa-star-half-o,
+.fa-star-o {
   color: gold;
 }
-
-.fa-envelope-o, .fa-thumbs-o-up, .fa-eye {
+.fa-envelope-o,
+.fa-eye,
+.fa-thumbs-o-up {
   font-size: 2rem;
   color: $main;
-    &:hover {
-      font-weight: bold;
-    }
+  &:hover {
+    font-weight: bold;
+  }
 }
-
 .fa-map-pin {
   color: blue;
   font-size: 1.2rem;
 }
-
 .fa-users {
   color: blue;
 }
-
 .user-action-icons {
   width: 90%;
   padding: 0.5rem 1rem;
@@ -55,21 +78,19 @@ a:hover {
     text-align: center;
     margin: auto;
   }
-  &__button{
+  &__button {
     background: transparent;
     border: none;
     outline: none;
     padding: 0;
   }
 }
-
 .family-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
 }
-
 .family-info-2 {
   display: flex;
   justify-content: space-between;
