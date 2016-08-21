@@ -6,34 +6,43 @@ $gray-text: #2f2f2f;
 
 .card {
   // box-shadow: none;
-  border: 2px solid $main;
 }
 
 .hero {
   width: 100%;
+  position: relative;
   min-height: 85vh;
   background-image: url('http://cdn.rentcafe.com/dmslivecafe/3/20100/Stock%20Family%20(1920x1080).jpg');
   background-size: cover;
   background-position: bottom-right;
+
+  &__gradient {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(rgba(#fff,0),rgba(#888,.68));
+    top: 0;
+    left: 0;
+  }
 }
+
 .welcome-card {
   font-size: 1rem;
   margin: 5rem 0;
-  background: rgba(#fff,.88);
+  background: rgba(#f6f6f6,.88);
   border: none;
-  color: $gray-text;
+  color: #0f0f0f;
   font-size: 1.5rem;
   font-weight: 200;
 }
 
+.to-login {
+  background: $gray-button;
+  margin-left: 2rem;
+  color: #262626;
 
-.to-register, .to-login {
-  background: $main;
-  margin-left: 0.5rem;
-  font-weight: 400;
-  color: #fff;
-  &:hover{
-    background: lighten($main, 6%);
+  &:hover {
+    background: darken($gray-button, 5%);
   }
 }
 
@@ -41,16 +50,18 @@ $gray-text: #2f2f2f;
   color: $blue;
 }
 
-.more, .card-title {
+.card-title,
+.more {
   color: $main;
-  font-weight: 400;
+  font-weight: 300;
+  text-align: center;
 }
 
 .more-info {
+  letter-spacing: 0.1rem;
   font-size: 2rem;
-  line-height: 2rem;
   padding: 1rem;
-  font-weight: 300;
-  text-align: left;
   text-transform: uppercase;
+  border-bottom: 0.1rem solid #ece7e7;
+  text-shadow: 0.1rem 0.1rem 0.1rem rgba(#d0d0d0,.47);
 }

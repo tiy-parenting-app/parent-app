@@ -1,0 +1,77 @@
+.grid-nav {
+  position: relative;
+  background: $main;
+  vertical-align: middle;
+  align-content: center;
+
+  a {
+    color: lighten($main, 70%);
+    vertical-align: middle;
+  }
+
+  &__container {
+    width: 92%;
+    padding: 0 0.5rem;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    vertical-align: middle;
+    font-size: 2rem;
+  }
+
+  &__logo {
+    font-size: 2.1rem;
+  }
+
+  &__right__list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    &__item {
+      width: calc(25% - 0.5rem);
+      text-align: center;
+      color: #fff;
+      font-size: 1.4rem;
+      margin: 0.1rem;
+    }
+  }
+
+  &__image {
+    margin: auto;
+
+    &__pic {
+      background: #fff;
+      padding: 0.1rem;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  &--icon {
+    &__grid {
+      color: #fff;
+    }
+
+    &__users {
+      color: #c3ffc4;
+    }
+
+    &__comments {
+      color: #2562ff;
+      font-size: 1.5rem;
+    }
+  }
+}
