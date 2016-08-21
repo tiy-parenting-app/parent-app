@@ -1,13 +1,11 @@
 .grid-nav {
-  position: relative;
-  background: $main;
+  width: 100%;
+  background: #fff;
   vertical-align: middle;
   align-content: center;
+  border-bottom: 0.11rem solid #e8e5e5;
+  z-index: 1;
 
-  a {
-    color: lighten($main, 70%);
-    vertical-align: middle;
-  }
 
   &__container {
     width: 92%;
@@ -19,18 +17,36 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
+    vertical-align: middle;
   }
 
   &__left {
+    width: 15%;
     display: flex;
-    flex-grow: 1;
     justify-content: space-between;
     vertical-align: middle;
-    font-size: 2rem;
+    color: #868686;
+    line-height: 0;
+  }
+
+  &__center {
+    width: 70%;
+    text-align: center;
+    flex-grow: 1;
+    vertical-align: middle;
+    margin: auto;
   }
 
   &__logo {
-    font-size: 2.1rem;
+    font-size: 2rem;
+    margin: 0;
+    color: $main;
+    line-height: auto;
+  }
+
+  &__right {
+    width: 15%;
   }
 
   &__right__list {
@@ -41,19 +57,20 @@
     text-align: center;
 
     &__item {
-      width: calc(25% - 0.5rem);
+      width: calc(25% - 0.6rem);
       text-align: center;
       color: #fff;
-      font-size: 1.4rem;
-      margin: 0.1rem;
+      font-size: 1.3rem;
+      margin: 0 0.1rem;
+      line-height: auto;
     }
   }
 
   &__image {
-    margin: auto;
+    margin: 0 auto;
 
     &__pic {
-      background: #fff;
+      background: #bcdfe9;
       padding: 0.1rem;
       width: 100%;
       margin: auto;
@@ -62,16 +79,19 @@
 
   &--icon {
     &__grid {
-      color: #fff;
+      color: #c3c3c3;
+      line-height: auto;
     }
 
     &__users {
       color: #c3ffc4;
+      line-height: auto;
     }
 
     &__comments {
       color: #2562ff;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      line-height: 0;
     }
   }
 }
