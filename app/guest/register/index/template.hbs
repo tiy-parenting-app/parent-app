@@ -6,26 +6,28 @@
     </div>
 
     <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
+      {{#simple-form class="form" }}
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              {{input id="email" type="email" class="validate" value=formValues}}
+              <label for="email">Email</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
+          <div class="row">
+            <div class="input-field col s12">
+              {{input id="password" type="password" class="validate" value=formValues}}
+              <label for="password">Password</label>
+            </div>
           </div>
-        </div>
-        <div class="form-action center-align">
-          {{#link-to 'guest.login'}}
-            <button class="btn col s12 card-btn btn-large"><i class="fa fa-arrow-right"></i></button>
-            <button class="btn back-btn">Already have an account?</button>
-          {{/link-to}}
-        </div>
-      </form>
+          <div class="form-action center-align">
+            {{#link-to 'guest.login'}}
+              <button class="btn col s12 card-btn btn-large"><i class="fa fa-arrow-right"></i></button>
+              <button class="btn back-btn">Already have an account?</button>
+            {{/link-to}}
+          </div>
+        </form>
+      {{/simple-form}}
     </div>
   </div>
 </div>
