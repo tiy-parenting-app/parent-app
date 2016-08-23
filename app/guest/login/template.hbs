@@ -5,24 +5,24 @@
     </div>
 
     <div class="row">
-      <form class="col s12">
+       {{#simple-form onsubmit=(action "loginUser") class="col s12" as |inputs|}}
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
+            {{input id="email" type="email" class="validate" value=inputs.email}}
             <label for="email">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
+            {{input id="password" type="password" class="validate" value=inputs.password}}
             <label for="password">Password</label>
           </div>
         </div>
         <div class="form-action center-align">
-          <button class="btn col s12 card-btn btn-large"><i class="fa fa-arrow-right"></i></button>
-          <button class="btn forgot-btn">Forgot your password?</button>
+          <button type="submit" class="btn col s12 card-btn btn-large"><i class="fa fa-arrow-right"></i></button>
+          <div class="btn forgot-btn">Forgot your password?</div>
         </div>
-      </form>
+      {{/simple-form}}
     </div>
   </div>
 </div>
