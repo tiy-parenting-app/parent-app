@@ -1,11 +1,11 @@
 .grid-nav {
+  position: fixed;
   width: 100%;
   background: #fff;
   vertical-align: middle;
   align-content: center;
   border-bottom: 0.11rem solid #e8e5e5;
-  z-index: 1;
-
+  z-index: 2;
 
   &__container {
     width: 90%;
