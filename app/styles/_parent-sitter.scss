@@ -2,10 +2,12 @@
 
 .parent-sitter-banner {
   width: 100%;
-  background: $main;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
+  background: #fbfbfb;
+  background-image: linear-gradient(180deg, rgba(255,255,255,0), #fbfbfb),linear-gradient(70deg, lighten($main,55%) 32%, #e0f1ff);
+  color: #3e3e3e;
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding: 0.5rem 2rem;
 }
 
 .grid-container {
