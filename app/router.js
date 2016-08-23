@@ -32,6 +32,10 @@ Router.map(function() {
     this.route('parent-parent', { path: '/playdates' });
     this.route('parent-choices');
   });
+  this.route('connection', function() {});
+  this.route('conversation', function() {
+    this.route('message');
+  });
 });
 
 export default Router;
