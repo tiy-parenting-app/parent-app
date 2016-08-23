@@ -10,7 +10,6 @@ export default Ember.Controller.extend({
      this.get('session').authenticate(authenticator,
        { identification: formValues.email, password: formValues.password })
        .then(() => {
-         debugger
          this.transitionToRoute('guest.welcome');
        });
    },
