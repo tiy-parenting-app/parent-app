@@ -13,9 +13,15 @@
         <div class="grid-nav__right">
           <ul class="grid-nav__right__list">
             <li class="grid-nav__right__list__item grid-nav__image circle"><img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle"></li>
-            <li class="grid-nav__right__list__item">{{#link-to "grid.parent-sitter"}}<i class="fa fa-th-large grid-nav--icon__grid" aria-hidden="true"></i>{{/link-to}}</li>
-            <li class="grid-nav__right__list__item">{{#link-to "grid.parent-sitter"}}<i class="fa fa-users grid-nav--icon__users" aria-hidden="true"></i>{{/link-to}}</li>
-            <li class="grid-nav__right__list__item">{{#link-to "grid.parent-sitter"}}<i class="fa fa-comments grid-nav--icon__comments" aria-hidden="true"></i>{{/link-to}}</li>
+            <li class="grid-nav__right__list__item">
+              {{#link-to "grid.parent-sitter"}}<i class="fa fa-th-large grid-nav--icon__grid" aria-hidden="true"></i>{{/link-to}}
+            </li>
+            <li class="grid-nav__right__list__item">
+              {{#link-to "grid.parent-sitter"}}<i class="fa fa-users grid-nav--icon__users" aria-hidden="true"></i>{{/link-to}}
+            </li>
+            <li class="grid-nav__right__list__item">
+              {{#link-to "grid.parent-sitter"}}<i class="fa fa-comments grid-nav--icon__comments" aria-hidden="true"></i>{{/link-to}}
+            </li>
           </ul>
         </div>
 
@@ -24,7 +30,13 @@
   </div>
   <div class="scroll-this-section">
     <main>
+
+      {{#each flashMessages.queue as |flash|}}
+        {{flash-message flash=flash}}
+      {{/each}}
+
       {{outlet}}
+
     </main>
     <footer class="page-footer grey lighten-3">
       <div class="container">
