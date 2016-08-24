@@ -13,8 +13,10 @@
         <div class="grid-nav__right">
           <ul class="grid-nav__right__list">
             <li class="grid-nav__right__list__item grid-nav__image circle">
+              <button {{action "toggleBubble"}} class="grid-nav__right__button">
               <img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle">
-              <div class="bubble">
+            </button>
+              <div class="bubble bubble__off">
                 <ul class="bubble__list">
                   <li class="bubble__list__item">
                     {{#link-to "profile.view.parent"}}<div class="bibble__list__item__span">View Profile</div>{{/link-to}}

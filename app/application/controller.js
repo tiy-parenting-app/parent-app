@@ -11,5 +11,9 @@ export default Ember.Controller.extend({
           flashMessages.success('SUCCESS!');
         });
     },
+    toggleBubble(){
+      const bubble = document.querySelector(".bubble");
+      bubble.classList.toggle('bubble__off');
+    },
   },
 });
