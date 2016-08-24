@@ -25,6 +25,7 @@ Router.map(function() {
       this.route('sitter');
       this.route('child');
     });
+    this.route('create');
   });
   this.route('grid', function() {
     this.route('parent-sitter', { path: '/sitters' });
