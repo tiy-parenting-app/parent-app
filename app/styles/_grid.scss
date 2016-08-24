@@ -6,6 +6,8 @@ $grid-gray: #999;
 .grid-nav {
   position: relative;
   width: 100%;
+  max-height: 3rem;
+  min-height: 3rem;
   background: #fff;
   vertical-align: middle;
   align-content: center;
@@ -20,7 +22,7 @@ $grid-gray: #999;
   }
 
   &__content {
-    max-height: 7vh;
+    max-height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
