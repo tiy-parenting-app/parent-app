@@ -15,3 +15,10 @@ $roboto-font-path: '../assets/';
 @import "user-select";
 @import "profile-view-parent";
 @import "profile-create";
+
+.success-messages {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}

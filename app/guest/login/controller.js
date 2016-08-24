@@ -1,8 +1,9 @@
 import Ember from 'ember';
+// import flashMessages from 'flash';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service(),
   flashMessages: Ember.inject.service(),
+  session: Ember.inject.service(),
 
   actions: {
     loginUser(formValues) {
@@ -10,23 +11,13 @@ export default Ember.Controller.extend({
 
       this.get('session').authenticate(authenticator, {
           identification: formValues.email,
-          password: formValues.password
+          password: formValues.password,
         })
         .then(() => {
+          this.get('flashMessages').success("YAY");
           this.transitionToRoute('guest.welcome');
         });
     },
-
-    displayFlash() {
-      const flashMessages = Ember.get(this, 'flashMessages');
-
-      Ember.get(this, 'model')
-        .save()
-        .then(() => {
-          flashMessages.success('SUCCESS!');
-        });
-    },
-
   },
 
 });

@@ -5,7 +5,7 @@
     </div>
 
     <div class="row">
-       {{#simple-form onsubmit=(action "loginUser" "displayFlash") class="col s12" as |inputs|}}
+       {{#simple-form onsubmit=(action "loginUser") class="col s12" as |inputs|}}
         <div class="row">
           <div class="input-field col s12">
             {{input id="email" type="email" class="validate" value=inputs.email}}

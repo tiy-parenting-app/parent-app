@@ -20,19 +20,6 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    flashMessageDefaults: {
-      // flash message defaults
-      timeout: 5000,
-      extendedTimeout: 0,
-      priority: 200,
-      sticky: true,
-      showProgress: true,
-
-      // service defaults
-      type: 'alpaca',
-      types: ['alpaca', 'notice', 'foobar'],
-      preventDuplicates: false
-    },
   };
 
   ENV['ember-simple-auth-token'] = {
