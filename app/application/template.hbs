@@ -12,7 +12,23 @@
 
         <div class="grid-nav__right">
           <ul class="grid-nav__right__list">
-            <li class="grid-nav__right__list__item grid-nav__image circle"><img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle"></li>
+            <li class="grid-nav__right__list__item grid-nav__image circle">
+              <img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle">
+              <div class="bubble">
+                <ul class="bubble__list">
+                  <li class="bubble__list__item">
+                    {{#link-to "profile.view.parent"}}<div class="bibble__list__item__span">View Profile</div>{{/link-to}}
+                  </li>
+                  <li class="bubble__list__item">
+                  {{#link-to "profile.edit"}}<div class="bibble__list__item__span">Edit Profile</div>{{/link-to}}
+                  </li>
+                  <li class="bubble__list__item">
+                    Logout
+                  </li>
+
+                </ul>
+              </div>
+            </li>
             <li class="grid-nav__right__list__item">
               {{#link-to "grid.parent-sitter"}}<i class="fa fa-th-large grid-nav--icon__grid" aria-hidden="true"></i>{{/link-to}}
             </li>
