@@ -14,10 +14,9 @@ export default Ember.Controller.extend({
           password: formValues.password,
         })
         .then(() => {
-          this.get('flashMessages').success("YAY");
+          this.get('flashMessages').success('You are now logged in!');
           this.transitionToRoute('guest.welcome');
         });
     },
   },
-
 });
