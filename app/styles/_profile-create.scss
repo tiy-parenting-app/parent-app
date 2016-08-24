@@ -1,0 +1,36 @@
+.create-profile {
+  display: flex;
+  flex-direction: column;
+  &__main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.form-main {
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+.upload-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  img {
+    width: 100%;
+  }
+}
+
+.phone-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.kids {
+  width: 100%;
+  border-bottom: 1px solid black;
+}

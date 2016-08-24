@@ -1,0 +1,74 @@
+<div class="profile-view-body">
+  <div class="container profile-view-container profile-view__create">
+    <div class="profile-view-top create-profile">
+      <h5>About your family</h5>
+      <div class="create-profile__main">
+        <div class="upload-image">
+          <div class="image-wrapper">
+            <img src="http://placekitten.com/200/200" alt="">
+          </div>
+          <button class="btn">Upload Photo</button>
+        </div>
+        <div class="form-main">
+          <div class="row form-row">
+            {{#simple-form class="col s12"}}
+              <div class="row">
+                <div class="input-field col s6">
+                  {{input type="text" class="validate"}}
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  {{input type="text" class="validate"}}
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  {{input type="text" class="validate"}}
+                  <label for="name">Location</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 phone-field">
+                  {{input type="text" class="validate"}}
+                  <label for="phone">Phone</label>
+                  <p>
+                    <input id="show" type="radio" name="phone" value="show">
+                    <label for="show">Show</label>
+                  </p>
+                  <p>
+                    <input id="hide" type="radio" name="phone" value="hide">
+                    <label for="hide">Hide</label>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  {{textarea id="textarea1" type="text" class="materialize-textarea validate"}}
+                  <label for="about">Brief bio that other users will see (blurb)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  {{textarea id="textarea1" type="text" class="materialize-textarea validate"}}
+                  <label for="about">Tell us more about your family and what you are looking for in a babysitter (bio)</label>
+                </div>
+              </div>
+              <div class="form-actions right-align">
+                <button class="btn waves-effect" type="clear">
+                  Clear All
+                </button>
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                  Submit
+                </button>
+              </div>
+            {{/simple-form}}
+          </div>
+        </div>
+      </div>
+      <div class="add-children">
+        <h5>Add Child</h5>
+      </div>
+    </div>
+  </div>
+</div>
