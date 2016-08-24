@@ -49,9 +49,16 @@
   <div class="scroll-this-section">
     <main>
 
-      {{#each flashMessages.queue as |flash|}}
-        {{flash-message flash=flash}}
-      {{/each}}
+      <div class="flash-messages">
+        {{#each flashMessages.queue as |flash|}}
+          {{#flash-message flash=flash class="success-message" as |message|}}
+          <div class="chip">
+            {{flash.message}}
+            <i class="close material-icons">close</i>
+          </div>
+          {{/flash-message}}
+        {{/each}}
+      </div>
 
       {{outlet}}
 

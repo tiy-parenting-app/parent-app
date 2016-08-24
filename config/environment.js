@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     DS: {
-      host:'http://localhost:3333',
+      host: 'http://localhost:3333',
     },
     modulePrefix: 'parent-app',
     environment: environment,
@@ -19,6 +19,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    flashMessageDefaults: {
+      // flash message defaults
+      timeout: 5000,
     },
   };
 
