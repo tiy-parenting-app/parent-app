@@ -4,43 +4,58 @@
       <div class="grid-nav__content">
 
         <div class="grid-nav__left">
-          <span><i class="fa fa-arrow-left" aria-hidden="true"></i> {{session.currentUser.email}}</span>
+          <span>{{session.currentUser.email}}</span>
         </div>
         <div class="grid-nav__center">
           {{#link-to "guest.welcome"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
         </div>
 
         <div class="grid-nav__right">
-          <ul class="grid-nav__right__list">
-            <li class="grid-nav__right__list__item grid-nav__image circle">
-              <button {{action "toggleBubble"}} class="grid-nav__right__button">
-              <img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle">
-            </button>
-              <div class="bubble bubble__off">
-                <ul class="bubble__list">
-                  <li class="bubble__list__item">
-                    {{#link-to "profile.view.parent"}}<div class="bibble__list__item__span">View Profile</div>{{/link-to}}
-                  </li>
-                  <li class="bubble__list__item">
-                  {{#link-to "profile.edit"}}<div class="bibble__list__item__span">Edit Profile</div>{{/link-to}}
-                  </li>
-                  <li class="bubble__list__item">
-                    Logout
-                  </li>
+          {{#if session.isAuthenticated}}
+            <ul class="grid-nav__right__list">
+              <li class="grid-nav__right__list__item grid-nav__image circle">
+                <button {{action "toggleBubble"}} class="grid-nav__right__button">
+                  <img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle">
+                </button>
+                <div class="bubble bubble__off">
+                  <ul class="bubble__list">
+                    <li class="bubble__list__item">
+                      {{#link-to "profile.view.parent"}}
+                        <div class="bibble__list__item__span">View Profile</div>
+                      {{/link-to}}
+                    </li>
+                    <li class="bubble__list__item">
+                      {{#link-to "profile.edit"}}
+                        <div class="bibble__list__item__span">Edit Profile</div>
+                      {{/link-to}}
+                    </li>
+                    <li class="bubble__list__item">
+                      <a {{action 'invalidateSession'}}>Logout</a>
+                    </li>
 
-                </ul>
-              </div>
-            </li>
-            <li class="grid-nav__right__list__item">
-              {{#link-to "grid.parent-sitter"}}<i class="fa fa-th-large grid-nav--icon__grid" aria-hidden="true"></i>{{/link-to}}
-            </li>
-            <li class="grid-nav__right__list__item">
-              {{#link-to "connection"}}<i class="fa fa-users grid-nav--icon__users" aria-hidden="true"></i>{{/link-to}}
-            </li>
-            <li class="grid-nav__right__list__item">
-              {{#link-to "grid.parent-sitter"}}<i class="fa fa-comments grid-nav--icon__comments" aria-hidden="true"></i>{{/link-to}}
-            </li>
-          </ul>
+                  </ul>
+                </div>
+              </li>
+              <li class="grid-nav__right__list__item">
+                {{#link-to "grid.parent-sitter"}}<i class="fa fa-th-large grid-nav--icon__grid" aria-hidden="true"></i>{{/link-to}}
+              </li>
+              <li class="grid-nav__right__list__item">
+                {{#link-to "connection"}}<i class="fa fa-users grid-nav--icon__users" aria-hidden="true"></i>{{/link-to}}
+              </li>
+              <li class="grid-nav__right__list__item">
+                {{#link-to "grid.parent-sitter"}}<i class="fa fa-comments grid-nav--icon__comments" aria-hidden="true"></i>{{/link-to}}
+              </li>
+            </ul>
+          {{else}}
+            <div class="else-menu">
+              <p class="else-menu__item">
+                {{#link-to 'guest.login'}}Login{{/link-to}}
+              </p>
+              <p class="else-menu__item">
+                {{#link-to 'guest.register'}}Register{{/link-to}}
+              </p>
+            </div>
+          {{/if}}
         </div>
 
       </div>
@@ -52,10 +67,12 @@
       <div class="flash-messages">
         {{#each flashMessages.queue as |flash|}}
           {{#flash-message flash=flash class="success-message" as |message|}}
-          <div class="chip">
-            {{flash.message}}
-            <i class="close material-icons">close</i>
-          </div>
+            <div class="container">
+              <div class="chip">
+                {{flash.message}}
+                <i class="close material-icons">close</i>
+              </div>
+            </div>
           {{/flash-message}}
         {{/each}}
       </div>
@@ -67,23 +84,22 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="grey-text">Footer Content</h5>
-            <p class="grey-text text-darken-4">You can use rows and columns here to organize your footer content.</p>
+            <h5 class="grey-text">Thank you for using Kin.</h5>
+            <p class="grey-text text-darken-4">Questions or concerns? You can contact our customer service representative <a href="#">here</a>.</p>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
+            <h5 class="white-text">Creators:</h5>
             <ul>
-              <li><a class="grey-text text-darken-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-darken-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-darken-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-darken-3" href="#!">Link 4</a></li>
+              <li><a class="grey-text text-darken-3" href="https://github.com/alextleach">Alex T Leach</a></li>
+              <li><a class="grey-text text-darken-3" href="https://github.com/dukec85">Chris Duke</a></li>
+              <li><a class="grey-text text-darken-3" href="https://github.com/hannahgswift">Hannah G Swift</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-          © 2016 Parent app name
+          © 2016 Kin
           <a class="grey-text text-darken-4 right" href="#!">More Links</a>
         </div>
       </div>

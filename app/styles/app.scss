@@ -16,9 +16,35 @@ $roboto-font-path: '../assets/';
 @import "profile-view-parent";
 @import "profile-create";
 
+
+// Flash message chip styles //
+
 .flash-messages {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   width:100%;
   z-index: 100000000000;
+}
+
+.success-message {
+  margin: auto;
+  width: 100%;
+}
+
+.chip {
+  background: lighten($main, 10%);
+  color: white;
+  width: 100%;
+  text-transform: uppercase;
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba(#afafaf,.35);
+}
+
+.else-menu {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  text-decoration: none;
+  &__item{
+    padding-left: 2rem;
+  }
 }

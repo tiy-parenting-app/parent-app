@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   flashMessages: Ember.inject.service(),
-  session: Ember.inject.service(),
+  session: Ember.inject.service('session'),
 
   actions: {
     loginUser(formValues) {
@@ -16,7 +16,11 @@ export default Ember.Controller.extend({
         .then(() => {
           this.get('flashMessages').success('You are now logged in!');
           this.transitionToRoute('guest.welcome');
-        });
+        })
+        .catch((reason) => {
+          this.get('flashMessages').danger('Login attempt failed. Did you enter the correct email and password?');
+          console.log(reason);
+        })
     },
   },
 });
