@@ -1,6 +1,7 @@
 .create-profile {
   display: flex;
   flex-direction: column;
+
   &__main {
     display: flex;
     flex-direction: row;
@@ -12,11 +13,13 @@
 .form-main {
   flex-grow: 1;
   margin-left: 1rem;
+  padding: 0 1.5rem;
 }
 
 .upload-image {
   display: flex;
   flex-direction: column;
+  padding: 0 0.4rem;
 }
 
 .image-wrapper {
@@ -28,6 +31,8 @@
 .phone-field {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .kids {
