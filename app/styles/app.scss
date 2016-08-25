@@ -15,10 +15,11 @@ $roboto-font-path: '../assets/';
 @import "user-select";
 @import "profile-view-parent";
 @import "profile-create";
+@import "conversation";
 
 .flash-messages {
   position: absolute;
   top: 2rem;
-  width:100%;
+  width: 100%;
   z-index: 100000000000;
 }
