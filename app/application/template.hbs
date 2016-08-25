@@ -4,7 +4,7 @@
       <div class="grid-nav__content">
 
         <div class="grid-nav__left">
-          <span><i class="fa fa-arrow-left" aria-hidden="true"></i> back to profile</span>
+          <span><i class="fa fa-arrow-left" aria-hidden="true"></i> {{session.currentUser.email}}</span>
         </div>
         <div class="grid-nav__center">
           {{#link-to "guest.welcome"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
