@@ -1,20 +1,20 @@
 {{#simple-form onsubmit=(action "saveProfile") as |formValues|}}
-<div class="container">
+  <div class="container">
 
-  <div class="card">
-    <div class="profile-view-body">
-      <div class="profile-view-container">
-        <div class="profile-view-top create-profile">
-          <h5 class="card-title">Tell us about your family</h5>
-          <div class="create-profile__main">
-            <div class="upload-image">
-              <div class="image-wrapper">
-                <img src="http://placekitten.com/200/200" alt="">
+    <div class="card">
+      <div class="profile-view-body">
+        <div class="profile-view-container">
+          <div class="profile-view-top create-profile">
+            <h5 class="card-title">Tell us about your family</h5>
+            <div class="create-profile__main">
+              <div class="upload-image">
+                <div class="image-wrapper">
+                  <img src="http://placekitten.com/200/200" alt="">
+                </div>
+                <button class="btn">Upload Photo</button>
               </div>
-              <button class="btn">Upload Photo</button>
-            </div>
-            <div class="form-main">
-              <div class="row form-row">
+              <div class="form-main">
+                <div class="row form-row">
                   <div class="row">
                     <div class="input-field col s6">
                       {{input type="text" class="validate" value=formValues.firstName}}
@@ -65,15 +65,15 @@
                       Submit
                     </button>
                   </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="add-children">
-            <h5>Add Child</h5>
+            <div class="add-children">
+              <h5>Add Child</h5>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 {{/simple-form}}
