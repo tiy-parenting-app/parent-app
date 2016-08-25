@@ -30,7 +30,10 @@ module.exports = function(environment) {
     serverTokenEndpoint: `${ENV.DS.host}/token`,
     tokenPropertyName: 'access_token',
   };
-
+  ENV['ember-simple-auth'] = {
+    baseURL: '/',
+    routeAfterAuthentication: 'guest'
+  };
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

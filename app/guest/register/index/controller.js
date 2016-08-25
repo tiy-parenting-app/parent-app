@@ -8,11 +8,11 @@ export default Ember.Controller.extend({
       const newUser = this.store.createRecord('user', formValues);
 
       newUser.save().then(() => {
-        this.transitionToRoute('index.login');
+        this.transitionToRoute('guest.login');
       })
       .then(() => {
         this.get('flashMessages').success('You are now registerd! Please login to continue.');
-        this.transitionToRoute('index.login');
+        this.transitionToRoute('guest.login');
       })
     },
   },

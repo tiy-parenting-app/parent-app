@@ -10,8 +10,10 @@ export default Ember.Controller.extend({
 
     invalidateSession() {
       this.get('session').invalidate();
-      this.get('flashMessages').success('You are now logged out!');
-      this.transitionToRoute('index.welcome');
+      this.transitionToRoute('guest.welcome')
+      .then(() => {
+        this.get('flashMessages').success('You are now logged out!');
+      })
     },
   },
 });

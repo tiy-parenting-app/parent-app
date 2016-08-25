@@ -38,3 +38,13 @@ $roboto-font-path: '../assets/';
   text-transform: uppercase;
   box-shadow: 0.1rem 0.1rem 0.3rem rgba(#afafaf,.35);
 }
+
+.else-menu {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  text-decoration: none;
+  &__item{
+    padding-left: 2rem;
+  }
+}
