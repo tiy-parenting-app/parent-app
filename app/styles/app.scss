@@ -17,8 +17,25 @@ $roboto-font-path: '../assets/';
 @import "profile-create";
 
 .flash-messages {
-  position: absolute;
-  top: 2rem;
+  position: fixed;
+  top: 3rem;
   width:100%;
   z-index: 100000000000;
+}
+
+.success-message {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  margin: auto;
+  width: 100%;
+}
+
+.chip {
+  background: lighten($main, 10%);
+  color: white;
+  width: 100%;
+  flex-grow: 1;
+  text-transform: uppercase;
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba(#afafaf,.35);
 }

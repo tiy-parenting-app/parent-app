@@ -22,7 +22,7 @@ module.exports = function(environment) {
     },
     flashMessageDefaults: {
       // flash message defaults
-      timeout: 5000,
+      timeout: 10000,
     },
   };
 
