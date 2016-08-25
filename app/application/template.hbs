@@ -14,18 +14,26 @@
           <ul class="grid-nav__right__list">
             <li class="grid-nav__right__list__item grid-nav__image circle">
               <button {{action "toggleBubble"}} class="grid-nav__right__button">
-              <img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle">
-            </button>
+                <img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle">
+              </button>
               <div class="bubble bubble__off">
                 <ul class="bubble__list">
                   <li class="bubble__list__item">
-                    {{#link-to "profile.view.parent"}}<div class="bibble__list__item__span">View Profile</div>{{/link-to}}
+                    {{#link-to "profile.view.parent"}}
+                      <div class="bibble__list__item__span">View Profile</div>
+                    {{/link-to}}
                   </li>
                   <li class="bubble__list__item">
-                  {{#link-to "profile.edit"}}<div class="bibble__list__item__span">Edit Profile</div>{{/link-to}}
+                    {{#link-to "profile.edit"}}
+                      <div class="bibble__list__item__span">Edit Profile</div>
+                    {{/link-to}}
                   </li>
                   <li class="bubble__list__item">
-                    Logout
+                    {{#if session.isAuthenticated}}
+                      <a {{action 'invalidateSession'}}>Logout</a>
+                    {{!-- {{else}}
+                      {{#link-to 'login'}}Login{{/link-to}} --}}
+                    {{/if}}
                   </li>
 
                 </ul>
@@ -52,12 +60,12 @@
       <div class="flash-messages">
         {{#each flashMessages.queue as |flash|}}
           {{#flash-message flash=flash class="success-message" as |message|}}
-          <div class="container">
-          <div class="chip">
-            {{flash.message}}
-            <i class="close material-icons">close</i>
-          </div>
-        </div>
+            <div class="container">
+              <div class="chip">
+                {{flash.message}}
+                <i class="close material-icons">close</i>
+              </div>
+            </div>
           {{/flash-message}}
         {{/each}}
       </div>
