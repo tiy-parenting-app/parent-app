@@ -7,10 +7,11 @@
           <span><i class="fa fa-arrow-left" aria-hidden="true"></i> {{session.currentUser.email}}</span>
         </div>
         <div class="grid-nav__center">
-          {{#link-to "guest.welcome"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
+          {{#link-to "index.welcome"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
         </div>
 
         <div class="grid-nav__right">
+          {{#if session.isAuthenticated}}
           <ul class="grid-nav__right__list">
             <li class="grid-nav__right__list__item grid-nav__image circle">
               <button {{action "toggleBubble"}} class="grid-nav__right__button">
@@ -29,11 +30,9 @@
                     {{/link-to}}
                   </li>
                   <li class="bubble__list__item">
-                    {{#if session.isAuthenticated}}
                       <a {{action 'invalidateSession'}}>Logout</a>
                     {{!-- {{else}}
                       {{#link-to 'login'}}Login{{/link-to}} --}}
-                    {{/if}}
                   </li>
 
                 </ul>
@@ -49,6 +48,7 @@
               {{#link-to "grid.parent-sitter"}}<i class="fa fa-comments grid-nav--icon__comments" aria-hidden="true"></i>{{/link-to}}
             </li>
           </ul>
+          {{/if}}
         </div>
 
       </div>

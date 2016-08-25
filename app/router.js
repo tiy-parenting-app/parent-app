@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('guest', { path: '/' }, function() {
+  this.route('index', { path: '/' }, function() {
     this.route('welcome', { path: '/' });
     this.route('register', function() {
       this.route('user-select');

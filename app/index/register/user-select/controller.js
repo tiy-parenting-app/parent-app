@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
     const newSelect = this.store.createRecord('user', formValues);
 
     newSelect.save().then(() => {
-      this.transitionToRoute('guest');
+      this.transitionToRoute('index');
     });
   },
 
