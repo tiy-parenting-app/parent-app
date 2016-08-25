@@ -1,1 +1,7 @@
-{{outlet}}
+{{#each model as |conversation|}}
+  <div class="conversation">
+    {{#each conversation.participants as |participant|}}
+      <h2>{{participant.user}}</h2>
+    {{/each}}
+  </div>
+{{/each}}
