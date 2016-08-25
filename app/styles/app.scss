@@ -15,6 +15,7 @@ $roboto-font-path: '../assets/';
 @import "user-select";
 @import "profile-view-parent";
 @import "profile-create";
+@import "conversation";
 
 
 // Flash message chip styles //
@@ -22,7 +23,7 @@ $roboto-font-path: '../assets/';
 .flash-messages {
   position: fixed;
   top: 2rem;
-  width:100%;
+  width: 100%;
   z-index: 100000000000;
 }
 
