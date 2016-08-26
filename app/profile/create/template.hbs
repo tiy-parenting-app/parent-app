@@ -9,9 +9,10 @@
             <div class="create-profile__main">
               <div class="upload-image">
                 <div class="image-wrapper">
-                  <img src="http://placekitten.com/200/200" alt="">
+                  <img src="http://icraa.org/wp-content/uploads/2013/03/Aisha-Celep.jpg">
                 </div>
-                <button class="btn">Upload Photo</button>
+                {{input type="file" value=formValues.userPicUrl}}
+                <label for="fileUpload">Select a file to upload</label>
               </div>
               <div class="form-main">
                 <div class="row form-row">
@@ -36,12 +37,12 @@
                       {{input type="text" class="validate" value=formValues.phoneNumber}}
                       <label for="phone">Phone</label>
                       <p>
-                        <input id="show" type="radio" name="phone" value="show">
-                        <label for="show">Show</label>
+                        <input id="show" type="radio" name="phone" value="show" class="with-gap">
+                        <label for="show" class="radio-pref">Show</label>
                       </p>
                       <p>
-                        <input id="hide" type="radio" name="phone" value="hide">
-                        <label for="hide">Hide</label>
+                        <input id="hide" type="radio" name="phone" value="hide" checked class="with-gap">
+                        <label for="hide" class="radio-pref">Hide</label>
                       </p>
                     </div>
                   </div>
@@ -69,7 +70,7 @@
               </div>
             </div>
             <div class="add-children">
-              <h5>Add Child</h5>
+              <h5 class="card-title">Add Child</h5>
             </div>
           </div>
         </div>

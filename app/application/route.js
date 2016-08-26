@@ -26,7 +26,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
           },
         }).then((raw) => raw.json())
         .then((response) => {
-          const currentUser = this.store.push(response);
+          const currentUser = this.store.pushPayload(response);
+
           this.set('session.currentUser', currentUser);
         });
     }
