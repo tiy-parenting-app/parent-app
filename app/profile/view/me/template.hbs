@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="card">
+    <div class="profile-view-body">
+      <div class="profile-view-container">
+        <div class="profile-view-top">
+          <div class="profile-view-top__image">
+            <img src="http://tripshooter.com/wp-content/uploads/2014/09/Rome_Stock_Couple_sfw.jpg" class="profile-view-top__image__pic circle responsive-image" alt="">
+          </div>
+          <div class="profile-view-top__info">
+            <ul class="profile-view-top__info__list">
+              <li class="profile-view-top__info__list__item">
+                <span class="profile-view-top__info__list__name">{{model.profile.firstName}}</span>
+              </li>
+              <li class="profile-view-top__info__list__item">
+                <strong>Number of Kids:</strong> 2
+              </li>
+              <li class="profile-view-top__info__list__item">
+                <strong>Kids' Ages:</strong> 4-7
+              </li>
+              <li class="profile-view-top__info__list__item">
+                <strong>Rating:</strong> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+              </li>
+              <li class="profile-view-top__info__list__item">
+                <strong>Phone: </strong>
+                {{model.profile.phoneNumber}}
+              </li>
+            </ul>
+          </div>
+          <div class="profile-view-top__buttons">
+            <button class="btn profile-view-top__buttons__btn profile-view-top__buttons__btn__like">
+              Like <i class="fa fa-thumbs-o-up"></i>
+            </button>
+            <button class="btn profile-view-top__buttons__btn">
+              Message <i class="fa fa-envelope-o"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-view-about">
+          <div class="profile-view-about__heading">
+            About {{model.profile.firstName}}
+          </div>
+          <div class="profile-view-about__info">
+            {{model.profile.userAbout}}
+          </div>
+          <div class="profile-view-about__heading">
+            Connections
+          </div>
+          <div class="profile-view-connections">
+            <div class="profile-view-connections__row">
+              <div class="profile-view-connections__item">
+                <div class="profile-view-connections__item__image">
+                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
+                </div>
+                <div class="profile-view-connections__item__name">
+                  <span>Michael</span>
+                </div>
+              </div>
+              <div class="profile-view-connections__item">
+                <div class="profile-view-connections__item__image">
+                  <img src="http://placecera.com/70/70" class="circle" alt="">
+                </div>
+                <div class="profile-view-connections__item__name">
+                  <span>Michael</span>
+                </div>
+              </div>
+              <div class="profile-view-connections__item">
+                <div class="profile-view-connections__item__image">
+                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
+                </div>
+                <div class="profile-view-connections__item__name">
+                  <span>Michael</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

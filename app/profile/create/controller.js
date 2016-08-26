@@ -9,5 +9,11 @@ export default Ember.Controller.extend({
         this.transitionToRoute('profile.view.parent');
       });
     },
+
+    selectPhoto() {
+      this.get('filesystem').prompt().then((upload) => {
+        this.set('uploadFile', upload[0]);
+      });
+    },
   },
 });

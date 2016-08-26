@@ -23,6 +23,7 @@ Router.map(function() {
       this.route('sitter');
       this.route('child');
       this.route('parent');
+      this.route('me');
     });
     this.route('edit', function() {
       this.route('parent');
