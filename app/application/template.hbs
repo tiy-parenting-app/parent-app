@@ -107,3 +107,13 @@
     </footer>
   </div>
 </div>
+
+<script>
+const everythingElse = document.querySelector(".app");
+everythingElse.addEventListener('click', function(event) {
+  if (event.target !== bubble && !bubble.contains(event.target)) {
+    // hide the menu
+    bubble.classList.add('bubble__off');
+  }
+});
+</script>
