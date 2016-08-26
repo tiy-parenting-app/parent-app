@@ -15,12 +15,6 @@ export default Ember.Component.extend({
           this.set('otherparticipant', participant);
         }
       });
-    })
-      // Find the most recent message from the conversation
-
-
-
-
-
+    });
   },
 });
