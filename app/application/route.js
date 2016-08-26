@@ -19,16 +19,17 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       const token = this.get('session').get('session.content.authenticated.access_token');
 
       return fetch(`${config.DS.host}/users/current`, {
-        type: 'GET',
-        headers: {
-          Authorization: `Bearer ${token}`,
+          type: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
 
-        },
-      }).then((raw) => raw.json())
-    .then((response) => {
-      const currentUser = this.store.push(response);
-      this.set('session.currentUser', currentUser);
-    });
+          },
+        }).then((raw) => raw.json())
+        .then((response) => {
+          const currentUser = this.store.push(response);
+          this.set('session.currentUser', currentUser);
+        });
     }
   },
+
 });
