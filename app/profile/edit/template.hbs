@@ -1,1 +1,80 @@
-{{outlet}}
+{{#simple-form startingValues=model.profile onsubmit=(action "updateProfile" model) as |formValues|}}
+  <div class="container">
+
+    <div class="card">
+      <div class="profile-view-body">
+        <div class="profile-view-container">
+          <div class="profile-view-top create-profile">
+            <h5 class="card-title">Editing Your Profile</h5>
+            <div class="create-profile__main">
+              <div class="upload-image">
+                <div class="image-wrapper">
+                  <img src="http://icraa.org/wp-content/uploads/2013/03/Aisha-Celep.jpg">
+                </div>
+                {{input type="file" value=formValues.userPicUrl}}
+                <label for="fileUpload">Select a file to upload</label>
+              </div>
+              <div class="form-main">
+                <div class="row form-row">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      {{input type="text" class="validate" value=formValues.firstName placeholder=model.profile.firstName}}
+                      <label class="active" for="first_name">First Name(s)</label>
+                    </div>
+                    <div class="input-field col s6">
+                      {{input type="text" class="validate" value=formValues.lastName placeholder=model.profile.lastName}}
+                      <label class="active" for="last_name">Last Name(s)</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      {{input type="text" class="validate" value=formValues.location placeholder=model.profile.location}}
+                      <label class="active" for="name">Location</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 phone-field">
+                      {{input type="text" class="validate" value=formValues.phoneNumber placeholder=model.profile.phoneNumber}}
+                      <label class="active" for="phone">Phone</label>
+                      <p>
+                        <input id="show" type="radio" name="phone" value=formValues.numberIsSecret  class="with-gap">
+                        <label class="active" for="show" class="radio-pref">Show</label>
+                      </p>
+                      <p>
+                        <input id="hide" type="radio" name="phone" value=formValues.numberIsSecret checked class="with-gap" >
+                        <label class="active" for="hide" class="radio-pref">Hide</label>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      {{textarea type="text" class="materialize-textarea validate" value=formValues.userBlurb placeholder=model.profile.userBlurb}}
+                      <label class="active" for="about">Brief bio that other users will see while browsing (blurb)</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      {{textarea type="text" class="materialize-textarea validate" value=formValues.userAbout placeholder=model.profile.userAbout}}
+                      <label class="active" for="about">Tell us more about your family and what you are looking for in a babysitter (bio)</label>
+                    </div>
+                  </div>
+                  <div class="form-actions right-align">
+                    <button class="btn waves-effect" type="clear">
+                      Clear All
+                    </button>
+                    <button class="btn waves-effect waves-light" type="submit">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="add-children">
+              <h5 class="card-title">Edit Child's Profile</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/simple-form}}
