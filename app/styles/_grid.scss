@@ -138,6 +138,7 @@ $footer-gray: #ede6e6;
   border: $gray-border solid 0.11rem;
   left: -100%;
   top: 90%;
+  z-index: 90000;
   box-shadow: 0.1rem 0.03rem 0.3rem rgba(#cdcdcd,.49);
 
   &:after {
@@ -148,7 +149,7 @@ $footer-gray: #ede6e6;
     border-color: #FFFFFF transparent;
     display: block;
     width: 0;
-    z-index: 1;
+    z-index: 900000;
     margin-left: -12px;
     top: -14px;
     left: 35%;
