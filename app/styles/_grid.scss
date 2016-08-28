@@ -1,14 +1,12 @@
 $gray-border: #e8e5e5;
-$cool-blue: #2562ff;
-$dark-blue: #312c91;
-$grid-gray: #999;
+$cool-blue: #174df1;
+$connections: #0026f1;
+$grid-button: #2b79ff;
 $footer-gray: #ede6e6;
 
 .grid-nav {
   position: relative;
   width: 100%;
-  max-height: 3rem;
-  min-height: 3rem;
   background: #fff;
   vertical-align: middle;
   align-content: center;
@@ -23,7 +21,6 @@ $footer-gray: #ede6e6;
   }
 
   &__content {
-    max-height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,7 +34,6 @@ $footer-gray: #ede6e6;
     justify-content: space-between;
     vertical-align: middle;
     color: #868686;
-    line-height: 0;
   }
 
   &__center {
@@ -45,7 +41,7 @@ $footer-gray: #ede6e6;
     text-align: center;
     flex-grow: 1;
     vertical-align: middle;
-    margin: auto;
+    margin: 0;
   }
 
   &__logo {
@@ -77,21 +73,50 @@ $footer-gray: #ede6e6;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
-    align-content: center;
     text-align: center;
+    margin: 0;
+    height: 100%;
 
     &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: calc(25% - 0.6rem);
       text-align: center;
+      vertical-align: middle;
       font-size: 1.3rem;
       margin: 0 0.1rem;
+      color: #838383;
+      transition: all 150ms ease-out;
+
+      a {
+        color: inherit;
+      }
+
+      &:hover {
+        color: $cool-blue;
+        border-bottom: 0.2rem solid $cool-blue;
+        transition: all 200ms ease-in;
+      }
+
+      .active,
+      .active:after,
+      .active:before {
+        color: $cool-blue;
+        // border-bottom: 0.2rem solid $cool-blue;
+      }
     }
   }
 
   &__image {
+    display: block;
+    align-self: flex-start;
     position: relative;
     width: 2.5rem;
+
+    &:hover {
+      border-bottom: none;
+    }
 
     &__pic {
       background: #bcdfe9;
@@ -101,41 +126,6 @@ $footer-gray: #ede6e6;
     }
   }
 
-  &--icon {
-    &__grid {
-      color: $grid-gray;
-      line-height: auto;
-      transition: color 100ms ease-in;
-
-      &:hover {
-        color: lighten($grid-gray, 15%);
-        transition: color 100ms ease-in;
-      }
-    }
-
-    &__users {
-      color: $dark-blue;
-      line-height: auto;
-      transition: color 150ms ease-in;
-
-      &:hover {
-        color: lighten($dark-blue, 15%);
-        transition: color 100ms ease-in;
-      }
-    }
-
-    &__comments {
-      color: $cool-blue;
-      font-size: 1.4rem;
-      line-height: 0;
-      transition: color 150ms ease-in;
-
-      &:hover {
-        color: lighten($cool-blue, 15%);
-        transition: color 150ms ease-in;
-      }
-    }
-  }
 }
 
 .bubble {
@@ -219,6 +209,7 @@ $footer-gray: #ede6e6;
 }
 
 .kin-footer {
+  width: 100%;
   background: $footer-gray;
 
   &__content {
