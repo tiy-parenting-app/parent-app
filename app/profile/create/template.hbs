@@ -37,11 +37,11 @@
                       {{input type="text" class="validate" value=formValues.phoneNumber}}
                       <label for="phone">Phone</label>
                       <p>
-                        <input id="show" type="radio" name="phone" value="show" class="with-gap">
+                        <input id="show" type="radio" name="phone" value=formValues.numberIsSecret  class="with-gap">
                         <label for="show" class="radio-pref">Show</label>
                       </p>
                       <p>
-                        <input id="hide" type="radio" name="phone" value="hide" checked class="with-gap">
+                        <input id="hide" type="radio" name="phone" value=formValues.numberIsSecret checked class="with-gap" >
                         <label for="hide" class="radio-pref">Hide</label>
                       </p>
                     </div>

@@ -15,12 +15,13 @@ $gray-text: #2f2f2f;
   background-image: url('http://cdn.rentcafe.com/dmslivecafe/3/20100/Stock%20Family%20(1920x1080).jpg');
   background-size: cover;
   background-position: bottom-right;
+  background-attachment: fixed;
 
   &__gradient {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: linear-gradient(rgba(#fff,0),rgba(#888,.68));
+    background-image: linear-gradient(rgba(#fff,.2),rgba(#888,.68));
     top: 0;
     left: 0;
   }
