@@ -2,6 +2,7 @@ $gray-border: #e8e5e5;
 $cool-blue: #2562ff;
 $dark-blue: #312c91;
 $grid-gray: #999;
+$footer-gray: #ede6e6;
 
 .grid-nav {
   position: relative;
@@ -214,5 +215,18 @@ $grid-gray: #999;
 
   &__off {
     display: none;
+  }
+}
+
+.kin-footer {
+  background: $footer-gray;
+
+  &__content {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    color: darken($footer-gray, 25%);
+    font-size: 0.8rem;
+    max-height: 2.8rem;
   }
 }
