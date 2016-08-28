@@ -11,7 +11,7 @@
 
 .profile-view-top {
   width: 95%;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2rem;
   display: flex;
   padding: 0 1rem;
   justify-content: space-between;
@@ -93,6 +93,10 @@
 
       &__like {
         background: #1158b6;
+
+        &:hover {
+          background: lighten(#1158b6, 5%);
+        }
       }
 
       &:hover {

@@ -5,7 +5,7 @@
       <div class="grid-nav__content">
 
         <div class="grid-nav__left">
-          <span>{{session.currentUser.email}} • {{session.currentUser.profile.location}}</span>
+          <span>Hello {{session.currentUser.profile.firstName}}!</span>
         </div>
         <div class="grid-nav__center">
           {{#link-to "guest.welcome"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
@@ -38,13 +38,13 @@
                 </div>
               </li>
               <li class="grid-nav__right__list__item">
-                {{#link-to "grid.parent-sitter"}}<i class="fa fa-th-large grid-nav--icon__grid" aria-hidden="true"></i>{{/link-to}}
+                {{#link-to "grid.parent-sitter"}}<i class="fa fa-th-large grid-nav--icon" aria-hidden="true"></i>{{/link-to}}
               </li>
               <li class="grid-nav__right__list__item">
-                {{#link-to "connection"}}<i class="fa fa-users grid-nav--icon__users" aria-hidden="true"></i>{{/link-to}}
+                {{#link-to "connection"}}<i class="fa fa-users grid-nav--icon" aria-hidden="true"></i>{{/link-to}}
               </li>
               <li class="grid-nav__right__list__item">
-                {{#link-to "conversation.index"}}<i class="fa fa-comments grid-nav--icon__comments" aria-hidden="true"></i>{{/link-to}}
+                {{#link-to "conversation"}}<i class="fa fa-comments grid-nav--icon" aria-hidden="true"></i>{{/link-to}}
               </li>
             </ul>
           {{else}}
@@ -81,27 +81,15 @@
       {{outlet}}
 
     </main>
-    <footer class="page-footer grey lighten-3">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="grey-text">Thank you for using Kin.</h5>
-            <p class="grey-text text-darken-4">Questions or concerns? You can contact our customer service representative <a href="#">here</a>.</p>
+    <footer class="kin-footer">
+      <div class="grid-nav__container">
+        <div class="kin-footer__content">
+          <div class="kin-footer__content__1">
+            <p>&copy; Kin 2016</p>
           </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Creators:</h5>
-            <ul>
-              <li><a class="grey-text text-darken-3" href="https://github.com/alextleach">Alex T Leach</a></li>
-              <li><a class="grey-text text-darken-3" href="https://github.com/dukec85">Chris Duke</a></li>
-              <li><a class="grey-text text-darken-3" href="https://github.com/hannahgswift">Hannah G Swift</a></li>
-            </ul>
+          <div class="kin-footer__content__2">
+            <p>Created by Alex T Leach, Christopher Duke, and Hannah Swift.</p>
           </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2016 Kin
-          <a class="grey-text text-darken-4 right" href="#!">More Links</a>
         </div>
       </div>
     </footer>
