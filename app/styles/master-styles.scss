@@ -22,17 +22,18 @@ html {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-around;
 }
 
 .scroll-this-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   overflow: scroll;
 }
 
 main {
-  flex-grow: 1;
+  flex: 1 0;
   min-height: 100%;
-  // margin-bottom: 2rem;
 
 }
 
