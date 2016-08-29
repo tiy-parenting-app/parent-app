@@ -49,10 +49,9 @@ Router.map(function() {
     this.route('message', {
       path: '/:conversation_id',
     });
-  });
-
-  this.route('conversations', function() {
-    this.route('start');
+    this.route('start', {
+      path: '/start/:user_id',
+    });
   });
 });
 
