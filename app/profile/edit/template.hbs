@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 {{log model.profile}}
 <div class="container">
-=======
-{{#simple-form startingValues=model.profile onsubmit=(action "saveProfile" model.profile) as |formValues|}}
-  <div class="container">
->>>>>>> c4b435a7bae7ab54b864220bad7e46de3da9dc60
-
   <div class="card">
     <div class="profile-view-body">
       <div class="profile-view-container">
-        {{#simple-form startingValues=model.profile onsubmit=(action "updateProfile" model.profile) as |formValues|}}
+        {{#simple-form startingValues=model.profile onsubmit=(action "saveProfile" model.profile) as |formValues|}}
           <div class="profile-view-top create-profile">
             <h5 class="card-title">Editing Your Profile</h5>
             <div class="create-profile__main">
