@@ -1,10 +1,10 @@
 {{log model.profile}}
-{{#simple-form startingValues=model.profile onsubmit=(action "updateProfile" model.profile) as |formValues|}}
-  <div class="container">
+<div class="container">
 
-    <div class="card">
-      <div class="profile-view-body">
-        <div class="profile-view-container">
+  <div class="card">
+    <div class="profile-view-body">
+      <div class="profile-view-container">
+        {{#simple-form startingValues=model.profile onsubmit=(action "updateProfile" model.profile) as |formValues|}}
           <div class="profile-view-top create-profile">
             <h5 class="card-title">Editing Your Profile</h5>
             <div class="create-profile__main">
@@ -38,11 +38,11 @@
                       {{input type="text" class="validate" value=formValues.phoneNumber placeholder=model.profile.phoneNumber}}
                       <label class="active" for="phone">Phone</label>
                       <p>
-                        <input id="show" type="radio" name="phone" value=formValues.numberIsSecret  class="with-gap">
+                        <input id="show" type="radio" name="phone" value=formValues.numberIsSecret class="with-gap">
                         <label class="active" for="show" class="radio-pref">Show</label>
                       </p>
                       <p>
-                        <input id="hide" type="radio" name="phone" value=formValues.numberIsSecret checked class="with-gap" >
+                        <input id="hide" type="radio" name="phone" value=formValues.numberIsSecret checked class="with-gap">
                         <label class="active" for="hide" class="radio-pref">Hide</label>
                       </p>
                     </div>
@@ -70,12 +70,37 @@
                 </div>
               </div>
             </div>
-            <div class="add-children">
-              <h5 class="card-title">Edit Child's Profile</h5>
+          </div>
+        {{/simple-form}}
+        <div class="add-children">
+          <h5 class="card-title">Add Child</h5>
+          <div class="add-children__card">
+            <div class="add-children__container">
+              <div class="add-children__content">
+                <div class="row">
+                  <div class="input-field col s6 add-children__content__column">
+                    {{input class="add-children__content__input" type="text" class="validate"}}
+                    <label for="firstName">First Name</label>
+                  </div>
+                  <div class="input-field col s6 add-children__content__column">
+                    {{input class="input-field col s6 add-children__content__input" type="number" class="validate"}}
+                    <label for="age">Age</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12 add-children__content__column">
+                    {{input class="add-children__content__input" type="text" class="validate"}}
+                    <label for="careDetails">Care Details</label>
+                  </div>
+                </div>
+                  <div class="row">
+                    <button type="submit" class="add-children__button">Add Child</button>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-{{/simple-form}}
+</div>
