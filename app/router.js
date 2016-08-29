@@ -46,7 +46,9 @@ Router.map(function() {
   });
   this.route('connection', function() {});
   this.route('conversation', function() {
-    this.route('message');
+    this.route('message', {
+      path: '/:conversation_id',
+    });
   });
 });
 

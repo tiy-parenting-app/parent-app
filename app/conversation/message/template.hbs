@@ -1,7 +1,7 @@
 <div class="conversation">
-  {{#with conversation.messages.firstObject as |participant|}}
-    <p>{{participant.text}}</p>
-  {{else}}
-    <p class="message-prompt">This is the start of something great. Send a message...</p>
-  {{/with}}
+  {{#each model.messages as |message|}}
+    <div class="conversation">
+        <p>{{message.text}}</p>
+    </div>
+  {{/each}}
 </div>
