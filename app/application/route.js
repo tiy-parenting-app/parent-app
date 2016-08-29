@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import config from 'parent-app/config/environment';
+const {reject} = Ember.RSVP.Promise;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   init() {
@@ -24,12 +25,18 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
             Authorization: `Bearer ${token}`,
 
           },
-        }).then((raw) => raw.json())
+        }).then((raw) => {
+          if (raw.ok) {
+            return raw.json();
+          }
+
+          return reject(this.get('session').invalidate());
+        })
         .then((response) => {
           const currentUser = this.store.pushPayload(response);
 
           this.set('session.currentUser', currentUser);
-        });
+        }, ()=> {});
     }
   },
 
