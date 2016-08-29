@@ -11,6 +11,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
+    "deploy": "ember build -e production && cp dist/index.html dist/200.html && surge dist kin-parenting.surge.sh",
     "lintfix": "eslint app --fix && eslint tests --fix"
   },
   "repository": "",
