@@ -1,32 +1,39 @@
 {{outlet}}
 <div class="container">
   <div class="card-container">
-    <div class="row">
-      <div class="card-card__title col s12 center-align">Register Below</div>
-    </div>
+    {{#simple-form onsubmit=(action "registerUser") class="form col s12" as |inputs| }}
+      <div class="row row__one">
+        <div class="card-card__title col s12 center-align">What kind of Kin are you?</div>
+        <div class="switch">
+          <label>
+      Babysitter
+      {{input id="duck" type="checkbox" name="isParent" checked=inputs.isParent}}
+      <span class="lever"></span>
+      Parent
+    </label>
+        </div>
+      </div>
 
-    <div class="row">
-      {{#simple-form onsubmit=(action "registerUser") class="form col s12" as |inputs| }}
-          <div class="row">
-            <div class="input-field col s12">
-              {{input id="email" type="email" class="validate" value=inputs.email }}
-              <label for="email">Email</label>
-            </div>
+      <div class="row">
+        <div class="row">
+          <div class="input-field col s12">
+            {{input id="email" type="email" class="validate" value=inputs.email}}
+            <label for="email">Email</label>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              {{input id="password" type="password" class="validate" value=inputs.password}}
-              <label for="password">Password</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            {{input id="password" type="password" class="validate" value=inputs.password}}
+            <label for="password">Password</label>
           </div>
-          <div class="form-action center-align">
-              <button type="submit" class="btn col s12 card-btn btn-large"><i class="fa fa-arrow-right"></i></button>
-            {{#link-to 'guest.login'}}
-              <div class="btn back-btn">Already have an account?</div>
-            {{/link-to}}
-          </div>
-        {{!-- </div> --}}
-      {{/simple-form}}
-    </div>
+        </div>
+        <div class="form-action center-align">
+          <button type="submit" class="btn col s12 card-btn btn-large"><i class="fa fa-arrow-right"></i></button>
+          {{#link-to 'guest.login'}}
+            <div class="btn back-btn">Already have an account?</div>
+          {{/link-to}}
+        </div>
+      </div>
+    {{/simple-form}}
   </div>
 </div>

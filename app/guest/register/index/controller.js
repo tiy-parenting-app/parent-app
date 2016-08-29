@@ -5,15 +5,20 @@ export default Ember.Controller.extend({
 
   actions: {
     registerUser(formValues) {
-      const newUser = this.store.createRecord('user', formValues);
+      let accountType = 'parent';
 
+      if (!formValues.isParent) {
+        accountType = 'sitter'
+      }
+      const newUser = this.store.createRecord('user', {...formValues, accountType});
       newUser.save().then(() => {
-        this.transitionToRoute('guest.login');
-      })
-      .then(() => {
-        this.get('flashMessages').success('You are now registerd! Please login to continue.');
-        this.transitionToRoute('guest.login');
-      })
+          this.transitionToRoute('guest.login');
+        })
+        .then(() => {
+          this.get('flashMessages').success('You are now registerd! Please login to continue.');
+          this.transitionToRoute('guest.login');
+        })
     },
+
   },
 });
