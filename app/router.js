@@ -50,6 +50,10 @@ Router.map(function() {
       path: '/:conversation_id',
     });
   });
+
+  this.route('conversations', function() {
+    this.route('start');
+  });
 });
 
 export default Router;
