@@ -1,27 +1,32 @@
 <div class="card-container">
   <div class="row">
-    <div class="card-card__title col s12 center-align">Select The Option That Best Fits Your Needs</div>
+    <div class="card-card__title col s12 center-align">What are you looking for today?</div>
   </div>
 
   <div class="row">
-    <p class="user-select">I Am Looking For</p>
+    <p class="user-select">I am looking for</p>
     <form action="#">
 
       <div class="select">
-        <div class="user-image">
+        <div class="select__item">
           {{#link-to "grid.parent-sitter"}}
-            <img class="user" src="http://placekitten.com/400/400">
+            <div class="img-wrapper">
+              <img src="http://cachevalleyfamilymagazine.com/wp-content/uploads/2015/04/babysitting.jpg">
+            </div>
           {{/link-to}}
-          <p>
-            <label for="test1">A Sitter</label>
+          <p class="choice">
+            <h5>A Babysitter</h5>
           </p>
         </div>
-        <div class="user-image">
-          {{#link-to "grid.parent-sitter"}}
-            <img class="user" src="http://placekitten.com/400/400">
+
+        <div class="select__item">
+          {{#link-to "grid.sitter-parent"}}
+            <div class="img-wrapper">
+              <img src="https://patcegan.files.wordpress.com/2012/01/kids-playing-in-the-sandbox1.jpg">
+            </div>
           {{/link-to}}
-          <p>
-            <label for="test2">A Playdate</label>
+          <p class="choice">
+            <h5>A Playdate</h5>
           </p>
         </div>
       </div>

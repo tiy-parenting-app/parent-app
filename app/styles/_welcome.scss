@@ -30,11 +30,26 @@ $gray-text: #2f2f2f;
 .welcome-card {
   font-size: 1rem;
   margin: 5rem 0;
-  background: rgba(#f6f6f6,.88);
+  background: transparent;
   border: none;
   color: #0f0f0f;
+  font-weight: 400;
   font-size: 1.5rem;
-  font-weight: 200;
+}
+
+.card-action {
+  margin: auto;
+  width: 40%;
+  p {
+    padding: 0.5rem 1.5rem;
+    background: $main;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 5rem;
+    font-size: 1.5rem;
+  }
 }
 
 .to-login {
@@ -54,8 +69,9 @@ $gray-text: #2f2f2f;
 .card-title,
 .more {
   color: $main;
-  font-weight: 300;
+  font-weight: bold;
   text-align: center;
+  font-size: 2rem;
 }
 
 .more-info {

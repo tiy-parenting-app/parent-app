@@ -6,19 +6,39 @@
 .select {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
+  justify-content: space-around;
+  max-width: 100%;
+  margin: auto;
 
-.user {
-  max-height: 10rem;
-}
-
-.user-image {
-  position: relative;
-  text-align: center;
-
-  label {
-    position: relative;
-    bottom: 10%;
+  &__item {
+    width: calc(100% / 2 - 2rem);
+    margin: 1rem;
   }
+}
+
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &::before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.choice {
+  text-align: center;
 }
