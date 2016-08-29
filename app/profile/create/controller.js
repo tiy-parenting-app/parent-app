@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       const newProfile = this.store.createRecord('profile', formValues);
       newProfile.save().then(() => {
 
-        this.transitionToRoute('profile.view.parent');
+        this.transitionToRoute('profile.view.me');
       });
     },
 
