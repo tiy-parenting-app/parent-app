@@ -44,6 +44,15 @@
   }
 }
 
+.message {
+  padding: 0 2.5rem 0;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .message-prompt {
   color: $gray-button;
 }

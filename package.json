@@ -47,7 +47,7 @@
     "ember-composable-helpers": "1.0.0",
     "ember-data": "emberjs/data",
     "ember-export-application-global": "^1.0.5",
-    "ember-filesystem": "0.2.1",
+    "ember-filesystem": "^0.2.1",
     "ember-font-awesome": "2.1.1",
     "ember-keyboard": "2.1.1",
     "ember-load-initializers": "^0.5.1",

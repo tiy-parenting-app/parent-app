@@ -15,4 +15,6 @@ export default DS.Model.extend({
   numberIsSecret: DS.attr('boolean'),
   isConnected: DS.attr('boolean'),
   childIsUnlocked: DS.attr('boolean'),
+
+  children: DS.hasMany('child'),
 });
