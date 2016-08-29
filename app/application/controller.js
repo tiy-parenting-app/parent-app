@@ -8,7 +8,6 @@ export default Ember.Controller.extend({
       bubble.classList.toggle('bubble__off')
     },
 
-
     invalidateSession() {
       this.get('session').invalidate();
       this.transitionToRoute('guest.welcome')

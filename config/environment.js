@@ -33,7 +33,7 @@ module.exports = function(environment) {
   };
   ENV['ember-simple-auth'] = {
     baseURL: '/',
-    routeAfterAuthentication: 'guest'
+    routeAfterAuthentication: 'guest',
   };
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

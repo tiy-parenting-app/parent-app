@@ -5,7 +5,9 @@
       <div class="grid-nav__content">
 
         <div class="grid-nav__left">
+          {{#if session.isAuthenticated}}
           <span>Hello {{session.currentUser.profile.firstName}}!</span>
+          {{/if}}
         </div>
         <div class="grid-nav__center">
           {{#link-to "guest.welcome"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
