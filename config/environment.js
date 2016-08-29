@@ -27,10 +27,7 @@ module.exports = function(environment) {
     },
   };
 
-  ENV['ember-simple-auth-token'] = {
-    serverTokenEndpoint: `${ENV.DS.host}/token`,
-    tokenPropertyName: 'access_token',
-  };
+
   ENV['ember-simple-auth'] = {
     baseURL: '/',
     routeAfterAuthentication: 'guest',
@@ -55,8 +52,14 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.DS.host = 'https://kin-parenting.herokuapp.com';
 
   }
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: `${ENV.DS.host}/token`,
+    tokenPropertyName: 'access_token',
+  };
 
   return ENV;
 };
