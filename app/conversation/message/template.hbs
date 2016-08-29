@@ -1,7 +1,9 @@
 <div class="conversation">
   {{#each model.messages as |message|}}
-    <div class="conversation">
-        <p>{{message.text}}</p>
+    <img src="{{ message.participant.user.profile.userPicUrl }}" alt="" class="circle">
+    <span class="title">{{ message.participant.user.profile.firstName }}</span>
+    <div class="message">
+      <p>{{ message.text }}</p>
     </div>
   {{/each}}
 </div>
