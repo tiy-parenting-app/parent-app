@@ -1,5 +1,4 @@
-{{log model.profile}}
-{{#simple-form startingValues=model.profile onsubmit=(action "updateProfile" model.profile) as |formValues|}}
+{{#simple-form startingValues=model.profile onsubmit=(action "saveProfile" model.profile) as |formValues|}}
   <div class="container">
 
     <div class="card">
@@ -10,10 +9,10 @@
             <div class="create-profile__main">
               <div class="upload-image">
                 <div class="image-wrapper">
-                  <img src="http://icraa.org/wp-content/uploads/2013/03/Aisha-Celep.jpg">
+                  <img src="http://placekitten.com/200/200">
                 </div>
                 {{input type="file" value=formValues.userPicUrl}}
-                <label for="fileUpload">Select a file to upload</label>
+                <label for="fileUpload" {{action "selectPhoto"}}>Select a file to upload</label>
               </div>
               <div class="form-main">
                 <div class="row form-row">
