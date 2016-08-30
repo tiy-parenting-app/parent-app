@@ -18,44 +18,46 @@ Router.map(function() {
     });
     this.route('login');
   });
-  this.route('profile', function() {
-    this.route('view', function() {
-      this.route('sitter', {
-        path: '/sitter/:profile_id',
-      });
-      this.route('child');
-      this.route('parent', {
-        path: '/parent/:profile_id',
-      });
+  this.route('user', function() {
+    this.route('profile', function() {
+      this.route('view', function() {
+        this.route('sitter', {
+          path: '/sitter/:profile_id',
+        });
+        this.route('child');
+        this.route('parent', {
+          path: '/parent/:profile_id',
+        });
 
-      this.route('me');
+        this.route('me');
+      });
+      this.route('edit', function() {
+        this.route('parent');
+        this.route('sitter');
+        this.route('child');
+      });
+      this.route('create');
     });
-    this.route('edit', function() {
-      this.route('parent');
-      this.route('sitter');
-      this.route('child');
+    this.route('grid', function() {
+      this.route('parent-sitter', {
+        path: '/sitters',
+      });
+      this.route('sitter-parent', {
+        path: '/parents',
+      })
+      this.route('parent-parent', {
+        path: '/playdates',
+      });
+      this.route('parent-choices');
     });
-    this.route('create');
-  });
-  this.route('grid', function() {
-    this.route('parent-sitter', {
-      path: '/sitters',
-    });
-    this.route('sitter-parent', {
-      path: '/parents',
-    })
-    this.route('parent-parent', {
-      path: '/playdates',
-    });
-    this.route('parent-choices');
-  });
-  this.route('connection', function() {});
-  this.route('conversation', function() {
-    this.route('message', {
-      path: '/:conversation_id',
-    });
-    this.route('start', {
-      path: '/start/:user_id',
+    this.route('connection', function() {});
+    this.route('conversation', function() {
+      this.route('message', {
+        path: '/:conversation_id',
+      });
+      this.route('start', {
+        path: '/start/:user_id',
+      });
     });
   });
 });
