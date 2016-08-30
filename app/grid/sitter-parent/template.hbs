@@ -1,139 +1,48 @@
-<div class="container">
-  <p>This is the list of parents that a sitter can see.</p>
+<div class="parent-sitter-banner">
+  <div class="grid-container">
+    <div class="parent-sitter-banner__content">
+      <p>You are viewing families in your area.</p>
+    </div>
+  </div>
+</div>
+<div class="grid-container">
   <div class="row section">
     <div class="row card-row col s6 m12">
-      <div class="col s12 m4">
-        <div class="card sitter-card">
-          <div class="card-image">
-            <div class="card-image__wrapper">
-              <img src="https://c.stocksy.com/a/nhG000/z0/64219.jpg">
+      {{#each model as |parent|}}
+        <div class="col s12 m4">
+          <div class="card sitter-card">
+            <div class="card-image">
+              <div class="card-image__wrapper">
+                <img src="{{parent.profile.userPicUrl}}">
+              </div>
+              <div class="card-image-gradient">
+                <span class="card-title">{{parent.profile.firstName}} {{parent.profile.lastName}}</span>
+              </div>
             </div>
-            <div class="card-image-gradient">
-              <span class="card-title">Jo and Jo Jones</span>
+            <div class="card-content family-info">
+              <p>{{parent.profile.userBlurb}}</p>
+              <p>Number of kids: 2</p>
+              <p>Kids' Ages: 1 - 8</p>
+              <br>
+              <div class="family-info-2">
+                <p><i class="fa fa-map-pin"></i> {{parent.profile.location}}</p>
+                <p>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="card-content family-info">
-            <p>Looking for: full-time nanny</p>
-            <p>Number of kids: 2</p>
-            <p>Kids' Ages: 1 - 8</p>
-            <br>
-            <div class="family-info-2">
-              <p><i class="fa fa-map-pin"></i> Nashville, TN</p>
-              <p>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </p>
+            <div class="card-action user-action-icons">
+              <button class="user-action-icons__button"><i class="fa fa-eye user-action-icons__item"></i></button>
+              <button class="user-action-icons__button"><i class="fa fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i></button>
+              <button class="user-action-icons__button"><i class="fa fa-envelope-o user-action-icons__item"></i></button>
             </div>
-          </div>
-          <div class="card-action user-action-icons">
-            <button class="user-action-icons__button"><i class="fa fa-eye user-action-icons__item"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-envelope-o user-action-icons__item"></i></button>
           </div>
         </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="card sitter-card">
-          <div class="card-image">
-            <div class="card-image__wrapper">
-              <img src="https://c.stocksy.com/a/nhG000/z0/64219.jpg">
-            </div>
-            <div class="card-image-gradient">
-              <span class="card-title">Jo and Jo Jones</span>
-            </div>
-          </div>
-          <div class="card-content family-info">
-            <p>Looking for: full-time nanny</p>
-            <p>Number of kids: 2</p>
-            <p>Kids' Ages: 1 - 8</p>
-            <br>
-            <div class="family-info-2">
-              <p><i class="fa fa-map-pin"></i> Nashville, TN</p>
-              <p>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </p>
-            </div>
-          </div>
-          <div class="card-action user-action-icons">
-            <button class="user-action-icons__button"><i class="fa fa-eye user-action-icons__item"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-envelope-o user-action-icons__item"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="card sitter-card">
-          <div class="card-image">
-            <div class="card-image__wrapper">
-              <img src="https://c.stocksy.com/a/nhG000/z0/64219.jpg">
-            </div>
-            <div class="card-image-gradient">
-              <span class="card-title">Jo and Jo Jones</span>
-            </div>
-          </div>
-          <div class="card-content family-info">
-            <p>Looking for: full-time nanny</p>
-            <p>Number of kids: 2</p>
-            <p>Kids' Ages: 1 - 8</p>
-            <br>
-            <div class="family-info-2">
-              <p><i class="fa fa-map-pin"></i> Nashville, TN</p>
-              <p>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </p>
-            </div>
-          </div>
-          <div class="card-action user-action-icons">
-            <button class="user-action-icons__button"><i class="fa fa-eye user-action-icons__item"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-envelope-o user-action-icons__item"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="card sitter-card">
-          <div class="card-image">
-            <div class="card-image__wrapper">
-              <img src="https://c.stocksy.com/a/nhG000/z0/64219.jpg">
-            </div>
-            <div class="card-image-gradient">
-              <span class="card-title">Jo and Jo Jones</span>
-            </div>
-          </div>
-          <div class="card-content family-info">
-            <p>Looking for: full-time nanny</p>
-            <p>Number of kids: 2</p>
-            <p>Kids' Ages: 1 - 8</p>
-            <br>
-            <div class="family-info-2">
-              <p><i class="fa fa-map-pin"></i> Nashville, TN</p>
-              <p>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </p>
-            </div>
-          </div>
-          <div class="card-action user-action-icons">
-            <button class="user-action-icons__button"><i class="fa fa-eye user-action-icons__item"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i></button>
-            <button class="user-action-icons__button"><i class="fa fa-envelope-o user-action-icons__item"></i></button>
-          </div>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </div>
