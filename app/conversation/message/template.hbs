@@ -1,14 +1,24 @@
-<div class="conversation">
-  {{#each model.messages as |message|}}
-    <img src="{{ message.participant.user.profile.userPicUrl }}" alt="" class="circle">
-    <span class="title">{{ message.participant.user.profile.firstName }}</span>
-    <div class="message">
-      <p>{{ message.text }}</p>
+<div class="messages__window">
+  <div class="messages__window__convo">
+    {{#each model.messages as |message|}}
+      <div class="each-message">
+        <div class="each-message__left">
+          {{!-- <img src="{{ message.participant.user.profile.userPicUrl }}
+          " alt=" " class="each-message__left__pic circle "> --}}
+        <img src="http://placecera.com/60/60 " alt=" " class="each-message__left__pic circle ">
+        <span class="title ">{{ message.participant.user.profile.firstName }}</span>
+      </div>
+      <div class="each-message__right ">
+        <div class="each-message__right__text ">{{ message.text }}</div>
+      </div>
     </div>
   {{/each}}
 </div>
 
+<div class="messages__window__typing">
 {{#simple-form onsubmit=(action 'sendMessage' model) as |inputs|}}
   {{input type="text" name="name" value=inputs.text placeholder="Message text" disabled=disableForm}}
-  <button type="submit" disabled={{disableForm}}>Send</button>
+  <button type="submit " disabled= {{disableForm}}>Send</button>
 {{/simple-form}}
+</div>
+</div>

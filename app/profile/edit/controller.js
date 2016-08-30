@@ -11,8 +11,8 @@ export default Ember.Controller.extend({
 
   actions: {
 
-    saveProfile(newEdits, formValues) {
-      newEdits.then((profile) => {
+    saveProfile(profilePromise, formValues) {
+      profilePromise.then((profile) => {
         profile.setProperties(formValues);
 
         profile.save().then(() => {
@@ -21,6 +21,16 @@ export default Ember.Controller.extend({
         });
       })
     },
+
+    createChild(profilePromise, childValues) {
+      profilePromise.then((profile) => {
+        const newChild = this.store.createRecord('child', childValues);
+        newChild.set('profile', profile);
+
+        newChild.save();
+      })
+    },
+
     selectPhoto() {
       this.get('filesystem').prompt().then((upload) => {
         this.set('uploadFile', upload[0]);
