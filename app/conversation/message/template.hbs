@@ -7,3 +7,8 @@
     </div>
   {{/each}}
 </div>
+
+{{#simple-form onsubmit=(action 'sendMessage' model) as |inputs|}}
+  {{input type="text" name="name" value=inputs.text placeholder="Message text" disabled=disableForm}}
+  <button type="submit" disabled={{disableForm}}>Send</button>
+{{/simple-form}}
