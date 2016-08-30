@@ -3,22 +3,24 @@
     {{#each model.messages as |message|}}
       <div class="each-message">
         <div class="each-message__left">
-          {{!-- <img src="{{ message.participant.user.profile.userPicUrl }}
-          " alt=" " class="each-message__left__pic circle "> --}}
-        <img src="http://placecera.com/60/60 " alt=" " class="each-message__left__pic circle ">
+          <img src="{{ message.participant.user.profile.userPicUrl }}
+          " alt=" " class="each-message__left__pic circle ">
+        {{!-- <img src="http://placecera.com/60/60 " alt=" " class="each-message__left__pic circle "> --}}
         <span class="title ">{{ message.participant.user.profile.firstName }}</span>
       </div>
       <div class="each-message__right ">
-        <div class="each-message__right__text ">{{ message.text }}</div>
+        <div class="each-message__right__text">{{ message.text }}</div>
       </div>
     </div>
   {{/each}}
 </div>
 
-<div class="messages__window__typing">
+<div class="messages__window__keyboard">
 {{#simple-form onsubmit=(action 'sendMessage' model) as |inputs|}}
-  {{input type="text" name="name" value=inputs.text placeholder="Message text" disabled=disableForm}}
-  <button type="submit " disabled= {{disableForm}}>Send</button>
+<div class="messages__window__typing">
+  <div class="messages__window__typing__input">{{input type="text" name="name" value=inputs.text placeholder="Type your message here. Hit return to send." disabled=disableForm class="huge-input-field"}}</div>
+  <div class="messages__window__typing__button"><button type="submit" class="huge-send-button" disabled= {{disableForm}}>Send</button></div>
+</div>
 {{/simple-form}}
 </div>
 </div>

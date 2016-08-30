@@ -1,4 +1,5 @@
 $message-bubble: #def5fe;
+$window-background: #fafafa;
 
 .conversation {
   width: 100%;
@@ -46,23 +47,73 @@ $message-bubble: #def5fe;
   &:last-child {
     border-bottom: none;
   }
+
+  a {
+    color: inherit;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__first-message {
+    color: #414141;
+  }
 }
 
 .messages {
   &__window {
     width: 100%;
     height: 64vh;
-    background: #fafafa;
+    background: $window-background;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     &__convo {
-      height: 80%;
+      width: 100%;
+      height: 85%;
+      flex-grow: 1;
+      overflow: scroll;
+    }
+
+    &__keyboard {
+      width: 100%;
+      height: 15%;
+      flex-shrink: 0;
+      background: #fff;
+      overflow: hidden;
+      border-top: 0.1rem solid darken($window-background, 5%);
     }
 
     &__typing {
-      height: 20%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+
+      &__input {
+        width: 90%;
+
+        input {
+          width: 95%;
+          border: none;
+          padding: 0 0.5rem;
+          margin-bottom: 0;
+
+          &[type=text]:focus:not([readonly]) {
+            border-bottom: none;
+            box-shadow: none;
+          }
+
+        }
+      }
+
+      &__button {
+        text-align: center;
+        width: 10%;
+      }
     }
   }
 }
@@ -77,8 +128,8 @@ $message-bubble: #def5fe;
     min-height: 4.5rem;
     width: 12%;
     display: flex;
-    background: blue;
     flex-direction: column;
+    justify-content: center;
 
     &__pic {
       max-height: 100%;
@@ -91,17 +142,23 @@ $message-bubble: #def5fe;
     width: 88%;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-content: center;
+    align-items: flex-end;
     flex: 1 0;
 
     &__text {
+      align-self: flex-end;
       position: relative;
-      margin-left: 0.5rem;
+      margin: 0.1rem 4rem 0.2rem 0.5rem;
       background: $message-bubble;
       padding: 0.2rem 0.5rem;
       border: 0.05rem solid darken($message-bubble, 2%);
       border-radius: 0.5rem;
       box-shadow: 0.1rem 0.1rem 0.2rem rgba(#a2a2a2,.33);
+
+      &:last-of-type {
+        margin-bottom: 2rem;
+      }
 
       &:after {
         content: '';
@@ -123,4 +180,15 @@ $message-bubble: #def5fe;
 
 .message-prompt {
   color: $gray-button;
+}
+
+.huge-send-button {
+  background: lighten($main, 10%);
+  width: 100%;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1rem 0;
+  border: 0.1rem solid lighten($main, 8%);
+  border-radius: 0.8rem;
 }
