@@ -7,13 +7,15 @@
           <div class="profile-view-top create-profile">
             <h5 class="card-title">Editing Your Profile</h5>
             <div class="create-profile__main">
-              <div class="upload-image">
-                <div class="image-wrapper">
-                  {{#if formValues.uploadFile}}
-                    {{local-img file=formValues.uploadFile}}
-                  {{else}}
-                    <img src="{{ model.profile.fullUserPicUrl }}">
-                  {{/if}}
+              <div class="upload-section">
+                <div class="upload-section__wrapper">
+                  <div class="ratio-frame">
+                    {{#if formValues.uploadFile}}
+                      {{local-img file=formValues.uploadFile class="ratio-frame__pic"}}
+                    {{else}}
+                      <img src="{{ model.profile.fullUserPicUrl }}" class="ratio-frame__pic">
+                    {{/if}}
+                  </div>
                 </div>
                 <button class="btn" {{action "choosePic" formValues}}>Upload Pic</button>
               </div>

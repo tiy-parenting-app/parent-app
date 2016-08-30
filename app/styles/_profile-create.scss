@@ -16,18 +16,40 @@
   padding: 0 1.5rem;
 }
 
-.upload-image {
+.upload-section {
   display: flex;
   flex-direction: column;
   padding: 0 0.4rem;
   width: calc(100% / 4);
 }
 
-.image-wrapper {
-  img {
+.ratio-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+
+  &__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    height: 100%;
     width: 100%;
+    border-radius: 100%;
+  }
+
+  &::before{
+    content: "";
+    display: block;
+    padding-top: 100%;
   }
 }
+
+
 
 .phone-field {
   display: flex;
