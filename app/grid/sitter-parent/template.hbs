@@ -38,7 +38,9 @@
             <div class="card-action user-action-icons">
               <button class="user-action-icons__button"><i class="fa fa-eye user-action-icons__item"></i></button>
               <button class="user-action-icons__button"><i class="fa fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i></button>
-              <button class="user-action-icons__button"><i class="fa fa-envelope-o user-action-icons__item"></i></button>
+                {{#link-to 'conversation.start' parent.id class="user-action-icons__button"}}
+              <i class="fa fa-envelope-o user-action-icons__item"></i>
+                {{/link-to}}
             </div>
           </div>
         </div>
