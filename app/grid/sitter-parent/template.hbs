@@ -10,6 +10,7 @@
     <div class="row card-row col s6 m12">
       {{#each model as |parent|}}
         <div class="col s12 m4">
+          {{#link-to "profile.view.parent" parent.id}}
           <div class="card sitter-card">
             <div class="card-image">
               <div class="card-image__wrapper">
@@ -45,6 +46,7 @@
                 {{/link-to}}
             </div>
           </div>
+          {{/link-to}}
         </div>
       {{/each}}
     </div>

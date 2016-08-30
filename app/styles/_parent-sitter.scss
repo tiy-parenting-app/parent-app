@@ -85,13 +85,16 @@ a:hover {
   font-size: 1.2rem;
 }
 
+
 .user-action-icons {
   width: 90%;
-  padding: 0.5rem 1rem;
+  // padding: 0.5rem 1rem;
   margin: 0 auto;
+  // margin-right: -2rem;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+
 
   &__item {
     align-content: center;
@@ -106,6 +109,11 @@ a:hover {
     outline: none;
     padding: 0;
   }
+}
+
+.fa-envelope-o {
+  margin-right: -1.5rem;
+  align-self: flex-end;
 }
 
 .family-info {

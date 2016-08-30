@@ -8,4 +8,12 @@ export default Ember.Route.extend({
       },
      })
   },
+
+  // afterModel({ id }) {
+  //   return this.store.findRecord('parent', {
+  //     filter: {
+  //       parent: id,
+  //     },
+  //   });
+  // }
 });
