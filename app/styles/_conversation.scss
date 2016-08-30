@@ -1,9 +1,12 @@
+$message-bubble: #def5fe;
+
 .conversation {
+  width: 100%;
   padding: 0.5rem 2.5rem 2rem;
   height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 
   &__chip {
@@ -21,6 +24,7 @@
 
   &__window {
     width: 100%;
+    height: 65vh;
     margin: auto;
     border: 0.13rem solid darken($gray, 2%);
     border-radius: 0.2rem;
@@ -44,13 +48,77 @@
   }
 }
 
-.message {
-  padding: 0 2.5rem 0;
-  height: 80vh;
+.messages {
+  &__window {
+    width: 100%;
+    height: 64vh;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__convo {
+      height: 80%;
+    }
+
+    &__typing {
+      height: 20%;
+    }
+  }
+}
+
+.each-message {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  width: 100%;
+
+  &__left {
+    text-align: center;
+    min-height: 4.5rem;
+    width: 12%;
+    display: flex;
+    background: blue;
+    flex-direction: column;
+
+    &__pic {
+      max-height: 100%;
+      padding: 0.4rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__right {
+    width: 88%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1 0;
+
+    &__text {
+      position: relative;
+      margin-left: 0.5rem;
+      background: $message-bubble;
+      padding: 0.2rem 0.5rem;
+      border: 0.05rem solid darken($message-bubble, 2%);
+      border-radius: 0.5rem;
+      box-shadow: 0.1rem 0.1rem 0.2rem rgba(#a2a2a2,.33);
+
+      &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        transform: skewX(-15deg);
+        border-width: 0.35rem 0.5rem 0.35rem 0;
+        border-color: transparent $message-bubble;
+        display: block;
+        width: 0;
+        z-index: 1;
+        margin-top: -0.4rem;
+        left: -0.35rem;
+        top: 60%;
+      }
+    }
+  }
 }
 
 .message-prompt {
