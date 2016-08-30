@@ -31,9 +31,9 @@ export default Ember.Controller.extend({
       })
     },
 
-    selectPhoto() {
+    choosePic(formValues) {
       this.get('filesystem').prompt().then((upload) => {
-        this.set('uploadFile', upload[0]);
+        formValues.set('uploadFile', upload[0]);
       });
     },
   },

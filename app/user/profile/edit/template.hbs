@@ -9,10 +9,13 @@
             <div class="create-profile__main">
               <div class="upload-image">
                 <div class="image-wrapper">
-                  <img src="http://placekitten.com/200/200">
+                  {{#if formValues.uploadFile}}
+                    {{local-img file=formValues.uploadFile}}
+                  {{else}}
+                    <img src="http://placekitten.com/200/200">
+                  {{/if}}
                 </div>
-                {{input type="file" }}
-                <label for="fileUpload" {{action "selectPhoto"}}>Select a file to upload</label>
+                <button class="btn" {{action "choosePic" formValues}}>Upload Pic</button>
               </div>
               <div class="form-main">
                 <div class="row form-row">
