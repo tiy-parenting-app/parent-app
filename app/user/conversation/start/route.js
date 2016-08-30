@@ -10,6 +10,6 @@ export default Ember.Route.extend({
   },
 
   afterModel(conversation) {
-    this.transitionTo('conversation.message', conversation);
+    this.transitionTo('user.conversation.message', conversation);
   },
 });

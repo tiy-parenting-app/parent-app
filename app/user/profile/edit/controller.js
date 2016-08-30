@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
 
         profile.save().then(() => {
           this.get('flashMessages').success('Profile updated.');
-          this.transitionToRoute('profile.view.me');
+          this.transitionToRoute('user.profile.me');
         });
       })
     },
