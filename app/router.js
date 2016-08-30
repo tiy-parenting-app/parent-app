@@ -20,9 +20,14 @@ Router.map(function() {
   });
   this.route('profile', function() {
     this.route('view', function() {
-      this.route('sitter');
+      this.route('sitter', {
+        path: '/sitter/:profile_id',
+      });
       this.route('child');
-      this.route('parent');
+      this.route('parent', {
+        path: '/parent/:profile_id',
+      });
+
       this.route('me');
     });
     this.route('edit', function() {

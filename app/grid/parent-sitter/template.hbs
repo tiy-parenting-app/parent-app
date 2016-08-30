@@ -14,20 +14,20 @@
           <div class="card sitter-card">
             <div class="card-image">
               <div class="card-image__wrapper">
-                <img src="{{babysitter.profile.userPicUrl}}">
+                <img src="{{ babysitter.profile.userPicUrl }}">
               </div>
               <div class="card-image-gradient">
-                <span class="card-title">{{babysitter.profile.firstName}} {{babysitter.profile.lastName}}</span>
+                <span class="card-title">{{ babysitter.profile.firstName }} {{ babysitter.profile.lastName }}</span>
               </div>
             </div>
             <div class="card-content location-rating family-info">
-              <p>{{babysitter.profile.userBlurb}}</p>
+              <p>{{ babysitter.profile.userBlurb }}</p>
               <p>
-                <i class="fa fa-usd"></i>{{babysitter.profile.sitterRate}}
+                <i class="fa fa-usd"></i>{{ babysitter.profile.sitterRate }}
               </p>
               <br>
               <div class="family-info-2">
-                <p><i class="fa fa-map-pin"></i>{{babysitter.profile.location}}</p>
+                <p><i class="fa fa-map-pin"></i>{{ babysitter.profile.location }}</p>
                 <p>
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -38,7 +38,9 @@
               </div>
             </div>
             <div class="card-action user-action-icons">
-              <button class="user-action-icons__button"><i class="fa fa-eye user-action-icons__item"></i></button>
+              {{#link-to 'profile.view.sitter' babysitter.id class="user-action-icons__button"}}
+                <i class="fa fa-eye user-action-icons__item"></i>
+              {{/link-to}}
               <button class="user-action-icons__button"><i class="fa fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i></button>
               {{#link-to 'conversation.start' babysitter.id class="user-action-icons__button"}}
                 <i class="fa fa-envelope-o user-action-icons__item"></i>

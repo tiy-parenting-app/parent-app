@@ -4,24 +4,24 @@
       <div class="profile-view-container">
         <div class="profile-view-top">
           <div class="profile-view-top__image">
-            <img src="http://tripshooter.com/wp-content/uploads/2014/09/Rome_Stock_Couple_sfw.jpg" class="profile-view-top__image__pic circle responsive-image" alt="">
+            <img src="{{ model.userPicUrl }}" class="profile-view-top__image__pic circle responsive-image" alt="">
           </div>
           <div class="profile-view-top__info">
             <ul class="profile-view-top__info__list">
               <li class="profile-view-top__info__list__item">
-                <span class="profile-view-top__info__list__name">Melanie & Melvin</span>
+                <span class="profile-view-top__info__list__name">{{ model.firstName }}</span>
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Number of Kids:</strong> 2
+                <strong>Number of Kids:</strong> {{ model.numberOfChildren }}
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Kids' Ages:</strong> 4-7
+                <strong>Kids' Ages:</strong> {{ model.ageRange }}
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Rating:</strong> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Phone: </strong>{{parent.profile.phoneNumber}}
+                <strong>Phone: </strong>{{ model.phoneNumber }}
               </li>
             </ul>
           </div>
@@ -37,10 +37,10 @@
 
         <div class="profile-view-about">
           <div class="profile-view-about__heading">
-            About Melanie & Melvin
+            About {{ model.firstName }}
           </div>
           <div class="profile-view-about__info">
-            Here is some info about Melanie and Melvin. They have 7 kids (that they know about). They could use some help!
+            {{ model.userAbout }}
           </div>
           <div class="profile-view-about__heading">
             Connections
