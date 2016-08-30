@@ -44,3 +44,66 @@
 .radio-pref {
   margin-left: 1rem;
 }
+
+.add-children {
+  text-align: center;
+
+  &__card {
+    width: 85%;
+    margin: 0 auto;
+    background: #faf9f9;
+    border-radius: 1rem;
+  }
+
+  &__container {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.3rem 0.6rem;
+
+    &__column {
+      input {
+        background: rgba(#fff,.23);
+        height: auto;
+        margin: 0.1rem 0.5rem;
+        padding: 0.3rem 0;
+        text-align: left;
+
+        &:focus {
+          background: #fff;
+        }
+      }
+
+      label {
+        text-align: left;
+      }
+    }
+  }
+
+  &__button {
+    background: lighten($main, 10%);
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    text-shadow: 0.05rem 0.05rem 0.1rem darken(rgba($main,.53) , 2%);
+    vertical-align: middle;
+    border: 0.1rem solid lighten($main, 6%);
+    padding: 0.4rem 0;
+    border-radius: 0.6rem;
+    width: 50%;
+    margin: 0.5rem auto 0;
+
+    &:hover {
+      background: lighten($main, 20%);
+      border: 0.1rem solid lighten($main, 14%);
+      transition: all 200ms ease-in;
+    }
+  }
+
+}
