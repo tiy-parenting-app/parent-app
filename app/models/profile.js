@@ -1,4 +1,6 @@
 import DS from 'ember-data';
+import Ember from 'ember';
+import config from 'parent-app/config/environment';
 
 export default DS.Model.extend({
   isParent: DS.attr('boolean'),
@@ -17,4 +19,14 @@ export default DS.Model.extend({
   childIsUnlocked: DS.attr('boolean'),
 
   children: DS.hasMany('child'),
+
+  fullUserPicUrl: Ember.computed('userPicUrl', function() {
+    const userPicUrl = this.get('userPicUrl');
+
+    if (userPicUrl) {
+      return `${config.DS.host}${this.get('userPicUrl')}`;
+    }
+
+    return 'http://placekitten.com/200/200';
+  }),
 });
