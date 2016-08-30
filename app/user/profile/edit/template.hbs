@@ -7,12 +7,17 @@
           <div class="profile-view-top create-profile">
             <h5 class="card-title">Editing Your Profile</h5>
             <div class="create-profile__main">
-              <div class="upload-image">
-                <div class="image-wrapper">
-                  <img src="http://placekitten.com/200/200">
+              <div class="upload-section">
+                <div class="upload-section__wrapper">
+                  <div class="ratio-frame">
+                    {{#if formValues.uploadFile}}
+                      {{local-img file=formValues.uploadFile class="ratio-frame__pic"}}
+                    {{else}}
+                      <img src="{{ model.profile.fullUserPicUrl }}" class="ratio-frame__pic">
+                    {{/if}}
+                  </div>
                 </div>
-                {{input type="file" }}
-                <label for="fileUpload" {{action "selectPhoto"}}>Select a file to upload</label>
+                <button class="btn" {{action "choosePic" formValues}}>Upload Pic</button>
               </div>
               <div class="form-main">
                 <div class="row form-row">

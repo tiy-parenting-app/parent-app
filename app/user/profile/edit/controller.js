@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from 'parent-app/config/environment';
 
 export default Ember.Controller.extend({
   filesystem: Ember.inject.service(),
@@ -13,12 +14,29 @@ export default Ember.Controller.extend({
 
     saveProfile(profilePromise, formValues) {
       profilePromise.then((profile) => {
-        profile.setProperties(formValues);
 
-        profile.save().then(() => {
-          this.get('flashMessages').success('Profile updated.');
-          this.transitionToRoute('user.profile.me');
-        });
+        const token = this.get('session.session.content.authenticated.access_token');
+
+        if (!formValues.uploadFile) {
+          profile.setProperties(formValues);
+
+          return profile.save().then(() => {
+            this.get('flashMessages').success('Profile updated.');
+            this.transitionToRoute('user.profile.me');
+          });
+        }
+
+        this.get('filesystem').fetch(`${config.DS.host}/profiles/${profile.id}`, {
+            method: 'PATCH',
+            headers: {
+              accept: 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+            body: {...formValues},
+          }).then((res) => res.json())
+          .then((data) => {
+            this.store.pushPayload(data);
+          });
       })
     },
 
@@ -31,9 +49,9 @@ export default Ember.Controller.extend({
       })
     },
 
-    selectPhoto() {
+    choosePic(formValues) {
       this.get('filesystem').prompt().then((upload) => {
-        this.set('uploadFile', upload[0]);
+        formValues.set('uploadFile', upload[0]);
       });
     },
   },
