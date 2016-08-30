@@ -1,11 +1,11 @@
-{{#link-to 'user.conversation.message' conversation}}
 <li class="collection-item avatar">
+  {{#link-to 'user.conversation.message' conversation}}
     <img src="{{ otherparticipant.user.profile.userPicUrl }}" alt="" class="circle">
-  <span class="title">{{ otherparticipant.user.profile.firstName }}</span>
+  <span class="collection__title">{{ otherparticipant.user.profile.firstName }}</span>
   {{#with conversation.messages.firstObject as |lastMessage|}}
-    <p>{{lastMessage.text}}</p>
+    <p class="collection__first-message">{{lastMessage.text}}</p>
   {{else}}
     <p class="message-prompt">This is the start of something great. Send a message...</p>
   {{/with}}
+  {{/link-to}}
 </li>
-{{/link-to}}
