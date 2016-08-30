@@ -5,7 +5,7 @@ moduleFor('route:profile/view/child', 'Unit | Route | profile/view/child', {
   // needs: ['controller:foo']
 });
 
-test('it exists', function(assert) {
+test('it exists', function (assert) {
   let route = this.subject();
   assert.ok(route);
 });

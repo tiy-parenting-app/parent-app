@@ -5,7 +5,7 @@ moduleFor('route:grid/parent-parent', 'Unit | Route | grid/parent parent', {
   // needs: ['controller:foo']
 });
 
-test('it exists', function(assert) {
+test('it exists', function (assert) {
   let route = this.subject();
   assert.ok(route);
 });
