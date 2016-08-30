@@ -1,11 +1,11 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:conversation/start', 'Unit | Route | conversation/start', {
+moduleFor('route:user/conversation/start', 'Unit | Route | user/conversation/start', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
 
-test('it exists', function(assert) {
+test('it exists', function (assert) {
   let route = this.subject();
   assert.ok(route);
 });

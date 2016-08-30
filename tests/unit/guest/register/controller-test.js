@@ -6,7 +6,7 @@ moduleFor('controller:guest/register', 'Unit | Controller | guest/register', {
 });
 
 // Replace this with your real tests.
-test('it exists', function(assert) {
+test('it exists', function (assert) {
   let controller = this.subject();
   assert.ok(controller);
 });
