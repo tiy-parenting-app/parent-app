@@ -1,3 +1,4 @@
+{{log model.profile.children}}
 <div class="container">
   <div class="card">
     <div class="profile-view-body">
@@ -12,10 +13,11 @@
                 <span class="profile-view-top__info__list__name">{{model.profile.firstName}}</span>
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Number of Kids:</strong> 2
-              </li>
-              <li class="profile-view-top__info__list__item">
-                <strong>Kids' Ages:</strong> 4-7
+              {{#if (eq model.accountType "sitter")}}
+              <strong>Hourly Rate:</strong> <i class="fa fa-usd"></i> {{model.profile.sitterRate}}
+              {{else}}
+              <strong>Number of Kids:</strong> {{model.profile.children.length}}
+              {{/if}}
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Rating:</strong> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
@@ -26,54 +28,31 @@
               </li>
             </ul>
           </div>
-          <div class="profile-view-top__buttons">
-            <button class="btn profile-view-top__buttons__btn profile-view-top__buttons__btn__like">
-              Like <i class="fa fa-thumbs-o-up"></i>
-            </button>
-            <button class="btn profile-view-top__buttons__btn">
-              Message <i class="fa fa-envelope-o"></i>
-            </button>
-          </div>
         </div>
 
         <div class="profile-view-about">
+          <div class="profile-view-about__heading">
+            Short Summary
+          </div>
+          <div class="profile-view-about__info">
+            {{model.profile.userBlurb}}
+          </div>
           <div class="profile-view-about__heading">
             About {{model.profile.firstName}}
           </div>
           <div class="profile-view-about__info">
             {{model.profile.userAbout}}
           </div>
+          {{#if (eq model.accountType "parent")}}
           <div class="profile-view-about__heading">
-            Connections
+            Children
           </div>
-          <div class="profile-view-connections">
-            <div class="profile-view-connections__row">
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-            </div>
+          <div class="profile-view-about__info">
+          {{#each model.profile.children as |child|}}
+            <p>{{child.name}}, {{child.age}}</p>
+          {{/each}}
           </div>
+          {{/if}}
         </div>
       </div>
     </div>
