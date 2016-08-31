@@ -17,8 +17,14 @@ export default DS.Model.extend({
   numberIsSecret: DS.attr('boolean'),
   isConnected: DS.attr('boolean'),
   childIsUnlocked: DS.attr('boolean'),
+  ratings: DS.hasMany('rating'),
 
   children: DS.hasMany('child'),
+
+  myRating: Ember.computed.alias('ratings.lastObject'),
+  myRatingValue: Ember.computed('ratings.lastObject.value', function() {
+    return this.get('myRating.value') || 0;
+  }),
 
   fullUserPicUrl: Ember.computed('userPicUrl', function() {
     const userPicUrl = this.get('userPicUrl');
