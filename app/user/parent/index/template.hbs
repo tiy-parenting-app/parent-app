@@ -10,16 +10,17 @@
     <div class="row card-row col s6 m12">
       {{#each model as |parent|}}
         <div class="col s12 m4">
-          {{#link-to "user.parent.view" parent.id}}
           <div class="card sitter-card">
+            {{#link-to "user.parent.view" parent.id}}
             <div class="card-image">
               <div class="card-image__wrapper">
                 <img src="{{ parent.profile.fullUserPicUrl }}">
               </div>
               <div class="card-image-gradient">
-                <span class="card-title">{{ parent.profile.firstName }} {{ parent.profile.lastName }}</span>
+                <span class="card-title">{{ parent.profile.firstName }}</span>
               </div>
             </div>
+            {{/link-to}}
 
             <div class="card-content family-info">
               <p>{{parent.profile.userBlurb}}</p>
@@ -48,7 +49,6 @@
                 {{/link-to}}
             </div>
           </div>
-          {{/link-to}}
         </div>
       {{/each}}
     </div>
