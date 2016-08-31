@@ -18,7 +18,12 @@
                 <strong>Kids' Ages:</strong> {{ model.ageRange }}
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Rating:</strong> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                <strong>Rating:</strong>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Phone: </strong>{{ model.phoneNumber }}
@@ -29,7 +34,7 @@
             <button class="btn profile-view-top__buttons__btn profile-view-top__buttons__btn__like">
               Like <i class="fa fa-thumbs-o-up"></i>
             </button>
-            {{#link-to 'user.conversation.start' parent.id class="btn profile-view-top__buttons__btn"}}
+            {{#link-to "user.conversation.start" model.id class="btn profile-view-top__buttons__btn"}}
               Message <i class="fa fa-envelope-o"></i>
             {{/link-to}}
           </div>

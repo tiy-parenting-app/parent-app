@@ -14,18 +14,20 @@
           <div class="card sitter-card">
             <div class="card-image">
               <div class="card-image__wrapper">
-                <img src="{{ parent.profile.userPicUrl }}">
+                <img src="{{ parent.profile.fullUserPicUrl }}">
               </div>
               <div class="card-image-gradient">
                 <span class="card-title">{{ parent.profile.firstName }} {{ parent.profile.lastName }}</span>
               </div>
             </div>
+
             <div class="card-content family-info">
               <p>{{parent.profile.userBlurb}}</p>
               <p>Number of kids: {{ parent.profile.numberOfChildren }}</p>
               <p>Kids' Ages: {{ parent.profile.ageRange }}</p>
               <br>
               <div class="family-info-2">
+
                 <p><i class="fa fa-map-pin"></i> {{ parent.profile.location }}</p>
                 <p>
                   <i class="fa fa-star"></i>

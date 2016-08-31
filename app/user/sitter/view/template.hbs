@@ -21,27 +21,27 @@
                 <strong>Years of Experience:</strong> {{ model.experience }}
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Rating:</strong> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                <strong>Rating:</strong>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Phone: </strong>{{ model.phoneNumber }}
               </li>
             </ul>
           </div>
-
-
           <div class="profile-view-top__buttons">
             <button class="btn profile-view-top__buttons__btn profile-view-top__buttons__btn__like">
               Like <i class="fa fa-thumbs-o-up right"></i>
             </button>
-            <button class="btn profile-view-top__buttons__btn">
-              Message <i class="fa fa-envelope-o right"></i>
-            </button>
+            {{#link-to "user.conversation.start" model.id class="btn profile-view-top__buttons__btn" }}
+              Message <i class="fa fa-envelope-o"></i>
+            {{/link-to}}
           </div>
         </div>
-
-
-
         <div class="profile-view-about">
           <div class="profile-view-about__heading">
             About {{ model.firstName }}
