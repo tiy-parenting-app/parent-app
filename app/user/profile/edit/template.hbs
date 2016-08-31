@@ -77,14 +77,36 @@
           </div>
         {{/simple-form}}
         <div class="add-children">
-          <h5 class="card-title add-children__title">Add Child</h5>
+          <h5 class="card-title add-children__title">Children</h5>
 
           {{#each model.profile.children as |child|}}
-            <div class="add-children__card">
+            <div class="add-children__card add-children__update">
               <div class="add-children__container">
-                <div class="add-children__content">
-                  {{child.name}}
-                </div>
+                {{#simple-form startingValues=child onsubmit=(action "updateChild" child) as |childValues|}}
+                  <div class="add-children__content">
+                    <div class="row">
+                      <div class="input-field col s6 add-children__content__column">
+                        {{input class="add-children__content__input" type="text" class="validate" value=childValues.name}}
+                        <label class="active" for="firstName">First Name</label>
+                      </div>
+                      <div class="input-field col s6 add-children__content__column">
+                        {{input class="input-field col s6 add-children__content__input" type="number" class="validate" value=childValues.age}}
+                        <label class="active" for="age">Age</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12 add-children__content__column">
+                        {{input class="add-children__content__input" type="text" class="validate" value=childValues.careDetails.text}}
+                        <label class="active" for="careDetails">Care Details</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <button type="submit" class="add-children__button add-children__button__update">
+                        Update
+                      </button>
+                    </div>
+                  </div>
+                {{/simple-form}}
               </div>
             </div>
           {{/each}}

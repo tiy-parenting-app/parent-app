@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
 
           return profile.save().then(() => {
             this.get('flashMessages').success('Profile updated.');
-            this.transitionToRoute('user.profile.me');
+            window.scrollTo(0,0);
           });
         }
 
@@ -47,6 +47,16 @@ export default Ember.Controller.extend({
 
         newChild.save();
       })
+    },
+
+    updateChild(profilePromise, childValues) {
+      profilePromise.then((child) => {
+          child.setProperties(childValues);
+
+          return child.save().then(() => {
+            this.get('flashMessages').success('Child details updated!');
+          });
+        });
     },
 
     choosePic(formValues) {
