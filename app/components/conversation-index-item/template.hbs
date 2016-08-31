@@ -1,6 +1,6 @@
 <li class="collection-item avatar">
   {{#link-to 'user.conversation.message' conversation}}
-    <img src="{{ otherparticipant.user.profile.userPicUrl }}" alt="" class="circle">
+    <img src="{{ otherparticipant.user.profile.fullUserPicUrl }}" alt="" class="circle">
   <span class="collection__title">{{ otherparticipant.user.profile.firstName }}</span>
   {{#with conversation.messages.firstObject as |lastMessage|}}
     <p class="collection__first-message">{{lastMessage.text}}</p>
