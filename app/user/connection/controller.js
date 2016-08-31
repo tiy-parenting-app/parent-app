@@ -10,5 +10,9 @@ export default Ember.Controller.extend({
         rating.save();
       });
     },
+
+    turnGreen(user) {
+
+    },
   },
 });
