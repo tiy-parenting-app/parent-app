@@ -18,7 +18,9 @@
             <ul class="grid-nav__right__list">
               <li class="grid-nav__right__list__item grid-nav__image circle">
                 <button {{action "toggleBubble"}} class="grid-nav__right__button">
-                  <img src="http://placecera.com/80/80" class="grid-nav__image__pic responsive-image circle">
+                  <div class="grid-nav__right__button__frame">
+                    <img src="{{session.currentUser.profile.fullUserPicUrl}}" class="grid-nav__image__pic responsive-image circle">
+                  </div>
                 </button>
                 <div class="bubble bubble__off">
                   <ul class="bubble__list">

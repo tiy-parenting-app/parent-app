@@ -69,9 +69,11 @@
 
   &__card {
     width: 85%;
-    margin: 0 auto;
+    margin: 0.7rem auto;
     background: #faf9f9;
+    border: 0.1rem solid darken(#faf9f9, 1%);
     border-radius: 1rem;
+    padding: 0.2rem;
   }
 
   &__container {
@@ -88,10 +90,10 @@
     &__column {
       input {
         background: rgba(#fff,.23);
-        height: auto;
         margin: 0.1rem 0.5rem;
-        padding: 0.3rem 0;
+        // padding: 0.1rem 0;
         text-align: left;
+        height: 2.2rem;
 
         &:focus {
           background: #fff;
@@ -102,6 +104,12 @@
         text-align: left;
       }
     }
+
+  }
+
+  &__update {
+    background: #f2fbff;
+    border: 0.1rem solid darken(#f2fbff, 1%);
   }
 
   &__button {
@@ -113,15 +121,23 @@
     text-shadow: 0.05rem 0.05rem 0.1rem darken(rgba($main,.53) , 2%);
     vertical-align: middle;
     border: 0.1rem solid lighten($main, 6%);
-    padding: 0.4rem 0;
+    padding: 0.2rem 0;
     border-radius: 0.6rem;
-    width: 50%;
+    width: 25%;
     margin: 0.5rem auto 0;
 
     &:hover {
       background: lighten($main, 20%);
       border: 0.1rem solid lighten($main, 14%);
       transition: all 200ms ease-in;
+    }
+
+    &__update {
+      background: #a4a4a4;
+      font-size: 1rem;
+      text-shadow: 0.05rem 0.05rem 0.1rem darken(rgba(#a4a4a4,.53) , 2%);
+      margin: 0.2rem auto 0;
+      border: 0.1rem solid lighten(#a4a4a4, 6%);
     }
   }
 }
