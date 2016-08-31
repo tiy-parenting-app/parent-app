@@ -69,8 +69,9 @@
 
   &__card {
     width: 85%;
-    margin: 0.5rem auto;
+    margin: 0.7rem auto;
     background: #faf9f9;
+    border: 0.1rem solid darken(#faf9f9, 1%);
     border-radius: 1rem;
     padding: 0.2rem;
   }
@@ -108,6 +109,7 @@
 
   &__update {
     background: #f2fbff;
+    border: 0.1rem solid darken(#f2fbff, 1%);
   }
 
   &__button {

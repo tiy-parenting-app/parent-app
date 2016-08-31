@@ -40,23 +40,23 @@ export default Ember.Controller.extend({
       })
     },
 
-    createChild(profilePromise, childValues) {
+    createChild(profilePromise, childValues, reset) {
       profilePromise.then((profile) => {
         const newChild = this.store.createRecord('child', childValues);
         newChild.set('profile', profile);
 
-        newChild.save();
-      })
+        newChild.save().then(() => {
+          reset();
+        });
+      });
     },
 
-    updateChild(profilePromise, childValues) {
-      profilePromise.then((child) => {
-          child.setProperties(childValues);
+    updateChild(child, newValues) {
+      child.setProperties(newValues);
 
-          return child.save().then(() => {
-            this.get('flashMessages').success('Child details updated!');
-          });
-        });
+      return child.save().then(() => {
+        this.get('flashMessages').success('Child details updated!');
+      });
     },
 
     choosePic(formValues) {
