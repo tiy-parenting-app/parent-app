@@ -1,3 +1,9 @@
+.beans {
+  box-shadow: none;
+  border: none;
+  width: 50%;
+}
+
 .user-select {
   display: flex;
   justify-content: center;
@@ -10,35 +16,48 @@
   max-width: 100%;
   margin: auto;
 
-  &__item {
+  &-item {
     width: calc(100% / 2 - 2rem);
     margin: 1rem;
+    &__image {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+      }
+
+      &::before{
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+    }
   }
 }
 
-.img-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-
-  &::before{
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
-}
-
-.choice {
-  text-align: center;
+.select-item {
+  padding: 1rem;
+  border-radius: 1rem;
+    a {
+      color: inherit;
+    }
+    .choice {
+      text-align: center;
+      transition: all 200ms ease-out;
+    }
+    &:hover {
+      background: rgba($footer-gray, .70);
+      transition: all 200ms linear;
+    }
 }
