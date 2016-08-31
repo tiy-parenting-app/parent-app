@@ -24,6 +24,7 @@
     "babel-eslint": "^6.1.2",
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "^2.0.1",
+    "ember-browserify": "1.1.12",
     "ember-cli": "2.7.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-autoprefixer": "0.6.0",
@@ -66,5 +67,8 @@
     "eslint-config-rtablada": "^3.0.0",
     "eslint-plugin-import": "^1.13.0",
     "loader.js": "^4.0.1"
+  },
+  "dependencies": {
+    "socket.io-client": "^1.4.8"
   }
 }
