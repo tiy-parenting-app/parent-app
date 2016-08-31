@@ -12,6 +12,7 @@
         {{#each model as |babysitter|}}
           <div class="col s12 m4">
           <div class="card sitter-card">
+            {{#link-to "user.sitter.view" babysitter.id}}
             <div class="card-image">
               <div class="card-image__wrapper">
                 <img src="{{ babysitter.profile.fullUserPicUrl }}">
@@ -20,6 +21,7 @@
                 <span class="card-title">{{ babysitter.profile.firstName }} {{ babysitter.profile.lastName }}</span>
               </div>
             </div>
+            {{/link-to}}
             <div class="card-content location-rating family-info">
               <p>{{ babysitter.profile.userBlurb }}</p>
               <p>
