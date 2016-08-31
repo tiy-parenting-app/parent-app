@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
 
           return profile.save().then(() => {
             this.get('flashMessages').success('Profile updated.');
-            this.transitionToRoute('user.profile.me');
+            window.scrollTo(0,0);
           });
         }
 
@@ -40,13 +40,23 @@ export default Ember.Controller.extend({
       })
     },
 
-    createChild(profilePromise, childValues) {
+    createChild(profilePromise, childValues, reset) {
       profilePromise.then((profile) => {
         const newChild = this.store.createRecord('child', childValues);
         newChild.set('profile', profile);
 
-        newChild.save();
-      })
+        newChild.save().then(() => {
+          reset();
+        });
+      });
+    },
+
+    updateChild(child, newValues) {
+      child.setProperties(newValues);
+
+      return child.save().then(() => {
+        this.get('flashMessages').success('Child details updated!');
+      });
     },
 
     choosePic(formValues) {
