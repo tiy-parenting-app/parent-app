@@ -11,8 +11,9 @@ export default Ember.Controller.extend({
       });
     },
 
-    turnGreen(user) {
-
+    workPlease(profile) {
+      profile.toggleProperty('cow');
+      profile.save();
     },
   },
 });
