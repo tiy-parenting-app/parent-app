@@ -4,42 +4,34 @@
       <div class="profile-view-container">
         <div class="profile-view-about">
           <div class="profile-view-about__heading">
-            Your mutual likes
+            Your Connections
           </div>
 
 
             <div class="profile-view-connections">
               <div class="profile-view-connections__row">
+                {{#each model as |profile|}}
                 <div class="profile-view-connections__item">
                   <div class="profile-view-connections__item__image">
-                    <img src="http://placecera.com/gif/70/70" class="circle" alt="">
+                    <img src="{{profile.profile.fullUserPicUrl}}" class="profile-view-connections__item__image__pic circle" alt="">
                   </div>
-                  <div class="profile-view-connections__item__name">
-                    <span>Michael</span>
-                  </div>
-                </div>
-                <div class="profile-view-connections__item">
-                  <div class="profile-view-connections__item__image">
-                    <img src="http://placecera.com/70/70" class="circle" alt="">
-                  </div>
-                  <div class="profile-view-connections__item__name">
-                    <span>Michael</span>
+                  <div class="profile-view-connections__item__name duck">
+                    <span class="duck__item">{{profile.profile.firstName}}</span>
+                    <span><i class="fa fa-fw fa-thumbs-o-up"></i></span>
+                    <span>
+                      {{#each (range 1 6) as |value|}}
+                        <i {{action "selectRating" profile value}} class="fa {{if (gte profile.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
+                      {{/each}}
+                    </span>
                   </div>
                 </div>
-                <div class="profile-view-connections__item">
-                  <div class="profile-view-connections__item__image">
-                    <img src="http://placecera.com/gif/70/70" class="circle" alt="">
-                  </div>
-                  <div class="profile-view-connections__item__name">
-                    <span>Michael</span>
-                  </div>
-                </div>
+                {{/each}}
               </div>
             </div>
 
 
 
-          <div class="profile-view-about__heading">
+          {{!-- <div class="profile-view-about__heading">
             People that have liked you
           </div>
 
@@ -105,7 +97,7 @@
               </div>
             </div>
           </div>
-
+ --}}
 
         </div>
       </div>
