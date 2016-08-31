@@ -17,7 +17,9 @@
                   {{/link-to}}
                   <div class="profile-view-connections__item__name duck">
                     <span class="duck__item">{{profile.profile.firstName}}</span>
-                    <span><i {{action "turnGreen" profile}} class="fa fa-fw fa-thumbs-o-up gray-thumb"></i></span>
+                    <span {{action "workPlease" profile}}>
+                      <span class="fa-thumbs-o-up__beans {{if profile.cow "fa fa-thumbs-up" "fa fa-thumbs-o-up"}}"></span>
+                    </span>
                     <span>
                       {{#each (range 1 6) as |value|}}
                         <i {{action "selectRating" profile value}} class="fa {{if (gte profile.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
