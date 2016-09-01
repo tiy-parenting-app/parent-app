@@ -125,21 +125,43 @@ $window-background: #fafafa;
 
   &__left {
     text-align: center;
-    min-height: 4.5rem;
-    width: 12%;
+    min-height: 4rem;
+    width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    color: #a3a2a2;
+
+    &__frame {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+    }
 
     &__pic {
-      max-height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
       padding: 0.4rem;
       margin: 0 auto;
     }
   }
 
   &__right {
-    width: 88%;
+    width: 90%;
     display: flex;
     justify-content: flex-start;
     align-content: center;

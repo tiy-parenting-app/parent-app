@@ -22,7 +22,6 @@ export default Ember.Controller.extend({
 
           return profile.save().then(() => {
             this.get('flashMessages').success('Profile updated.');
-            window.scrollTo(0,0);
           });
         }
 

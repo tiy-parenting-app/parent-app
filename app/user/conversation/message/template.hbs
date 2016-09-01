@@ -3,8 +3,9 @@
     {{#each (sort-by "id" model.messages) as |message|}}
       <div class="each-message">
         <div class="each-message__left">
-          <img src="{{ message.participant.user.profile.fullUserPicUrl }}
-          " alt=" " class="each-message__left__pic circle ">
+          <div class="each-message__left__frame">
+          <img src="{{ message.participant.user.profile.fullUserPicUrl }}" alt=" " class="each-message__left__pic circle ">
+        </div>
         {{!-- <img src="http://placecera.com/60/60 " alt=" " class="each-message__left__pic circle "> --}}
         <span class="title ">{{ message.participant.user.profile.firstName }}</span>
       </div>
