@@ -12,16 +12,15 @@ $gray-text: #2f2f2f;
   width: 100%;
   position: relative;
   min-height: 85vh;
-  background-image: url('http://cdn.rentcafe.com/dmslivecafe/3/20100/Stock%20Family%20(1920x1080).jpg');
+  background-image: url('https://hd.unsplash.com/photo-1472057401516-4715a3148277');
   background-size: cover;
-  background-position: bottom-right;
-  background-attachment: fixed;
+  background-position: center;
 
   &__gradient {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: linear-gradient(rgba(#fff,.2),rgba(#888,.68));
+    background-image: linear-gradient(rgba(#fff,.2),rgba(#8a7d96,.68));
     top: 0;
     left: 0;
   }
@@ -35,20 +34,50 @@ $gray-text: #2f2f2f;
   color: #0f0f0f;
   font-weight: 400;
   font-size: 1.5rem;
+
+  &__title {
+    font-family: 'Heebo', sans-serif;
+    font-size: 5.5rem;
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 0.1rem 0.1rem 0.3rem rgba(#4e4359,.1);
+
+  }
+
+  &__tagline {
+    font-family: 'Heebo', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    text-shadow: 0.1rem 0.1rem 0.1rem rgba(#4e4359,.3);
+  }
 }
 
 .card-action {
   margin: auto;
   width: 40%;
-  p {
-    padding: 0.5rem 1.5rem;
-    background: $main;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 400;
-    border-radius: 5rem;
-    font-size: 1.5rem;
+}
+
+.to-register {
+  font-family: 'Heebo', sans-serif;
+  padding: 0.5rem 1.5rem;
+  background: rgba(#b3b3b3,.12);
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: 5rem;
+  border: 0.155rem solid #fff;
+  font-size: 1.6rem;
+  letter-spacing: 0.07rem;
+  transition: background 200ms ease-out, background-image 100ms ease-out, text-shadow 300ms ease-out, border 400ms ease-out;
+
+  &:hover {
+    background: lighten($main, 10%);
+    background-image: radial-gradient(rgba(#fff,0),lighten($main, 7%));
+    border: 0.155rem solid lighten($main, 7%);
+    text-shadow: 0.1rem 0.1rem 0.1rem lighten($main, 5%);
+    box-shadow: 0.2rem 0.4rem 0.5rem rgba(#5e536c,.26);
+    transition: background 200ms ease-in, background-image 100ms ease-in, text-shadow 300ms ease-in, border 400ms ease-in;
   }
 }
 

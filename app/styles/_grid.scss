@@ -47,7 +47,7 @@ $footer-gray: #ede6e6;
   &__logo {
     font-size: 2rem;
     margin: 0;
-    color: $main;
+    color: lighten($main, 10%);
     line-height: auto;
   }
 
@@ -247,3 +247,44 @@ $footer-gray: #ede6e6;
     max-height: 2.8rem;
   }
 }
+@media only screen and (max-width: 1000px) {
+  .grid-nav {
+    &__container {
+      width: 92%;
+    }
+
+    &__left {
+      display: none;
+    }
+
+    &__center {
+      width: 50%;
+      text-align: left;
+    }
+
+    &__right {
+      width: 30%;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .grid-nav {
+    &__container {
+      width: 95%;
+    }
+
+    &__left {
+      display: none;
+    }
+
+    &__center {
+      width: 50%;
+      text-align: left;
+    }
+
+    &__right {
+      width: 40%;
+    }
+  }
+}
+@media only screen and (min-width : 320px) and (max-width : 580px) {}
