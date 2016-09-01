@@ -46,7 +46,7 @@ main {
 }
 
 .child-icon {
-  color: $main;
+  color: lighten($main, 10%);
   font-size: 2.5rem;
 
 }
@@ -58,3 +58,10 @@ main {
 .card-container {
   background: #fff;
 }
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 97%;
+    padding-top: 0;
+  }
+}
+@media only screen and (min-width : 320px) and (max-width : 580px) {}
