@@ -22,46 +22,65 @@
               <div class="form-main">
                 <div class="row form-row">
                   <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s7">
+                      <i class="material-icons prefix">assignment_ind</i>
                       {{input type="text" class="validate" value=formValues.firstName placeholder=model.profile.firstName}}
                       <label class="active" for="first_name">First Name(s)</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s5">
                       {{input type="text" class="validate" value=formValues.lastName placeholder=model.profile.lastName}}
                       <label class="active" for="last_name">Last Name(s)</label>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s7">
+                      <i class="material-icons prefix">store</i>
                       {{input type="text" class="validate" value=formValues.location placeholder=model.profile.location}}
-                      <label class="active" for="name">Location</label>
+                      <label class="active" for="name">Neighborhood</label>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12 phone-field">
+
+                    <div class="input-field col s5 phone-field">
+                      <i class="material-icons prefix">phone</i>
                       {{input type="text" class="validate" value=formValues.phoneNumber placeholder=model.profile.phoneNumber}}
                       <label class="active" for="phone">Phone</label>
-                      <p>
+                      {{!-- <p>
                         <input id="show" type="radio" name="phone" value=formValues.numberIsSecret class="with-gap">
                         <label class="active" for="show" class="radio-pref">Show</label>
                       </p>
                       <p>
                         <input id="hide" type="radio" name="phone" value=formValues.numberIsSecret checked class="with-gap">
                         <label class="active" for="hide" class="radio-pref">Hide</label>
-                      </p>
+                      </p> --}}
                     </div>
+                    {{#if (eq session.currentUser.accountType "sitter")}}
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">payment</i>
+                      {{input type="number" class="validate" value=formValues.sitterRate placeholder=model.profile.sitterRate}}
+                      <label class="active" for="name">Your hourly rate</label>
+                    </div>
+                    {{/if}}
+
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
+                      <i class="material-icons prefix">info</i>
                       {{textarea type="text" class="materialize-textarea validate" value=formValues.userBlurb placeholder=model.profile.userBlurb}}
-                      <label class="active" for="about">Brief bio that other users will see while browsing (blurb)</label>
+                      <label class="active" for="about">Your blurb: A 1-2 sentence bio that other users will see while browsing</label>
                     </div>
                   </div>
                   <div class="row">
+                    {{#if (eq session.currentUser.accountType "parent")}}
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">perm_identity</i>
+                      {{textarea type="text" class="materialize-textarea validate" value=formValues.userAbout placeholder=model.profile.userAbout}}
+                      <label class="active" for="about">Bio: Tell us more about your family and what you are looking for in a babysitter</label>
+                    </div>
+                    {{else}}
                     <div class="input-field col s12">
                       {{textarea type="text" class="materialize-textarea validate" value=formValues.userAbout placeholder=model.profile.userAbout}}
-                      <label class="active" for="about">Tell us more about your family and what you are looking for in a babysitter (bio)</label>
+                      <label class="active" for="about">Bio: Tell us about yourself, your experience, availibility, etc.</label>
                     </div>
+                    {{/if}}
                   </div>
                   <div class="form-actions right-align">
                     <button class="btn waves-effect waves-light" type="submit">
@@ -73,6 +92,7 @@
             </div>
           </div>
         {{/simple-form}}
+        {{#if (eq session.currentUser.accountType "parent")}}
         <div class="add-children">
           <h5 class="card-title add-children__title">Children</h5>
 
@@ -114,7 +134,7 @@
               {{#simple-form onsubmit=(action "createChild" model.profile) startingValues=(hash careDetails=(hash)) as |childValues|}}
                 <div class="add-children__content">
                   <div class="row">
-                    <h5 class="card-title add-children__title">Add Child</h5>
+                    <h5 class="add-children__title__add">Add Child</h5>
                     <div class="input-field col s6 add-children__content__column">
                       {{input class="add-children__content__input" type="text" class="validate" value=childValues.name}}
                       <label for="firstName">First Name</label>
@@ -138,6 +158,7 @@
             </div>
           </div>
         </div>
+        {{/if}}
       </div>
     </div>
   </div>
