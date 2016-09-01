@@ -24,6 +24,11 @@ $gray-text: #2f2f2f;
     top: 0;
     left: 0;
   }
+
+  &__container {
+    width: 75%;
+    margin: 0 auto;
+  }
 }
 
 .welcome-card {
@@ -46,13 +51,14 @@ $gray-text: #2f2f2f;
 
   &__tagline {
     font-family: 'Heebo', sans-serif;
+    font-size: 1.5rem;
     color: #fff;
     font-weight: 400;
     text-shadow: 0.1rem 0.1rem 0.1rem rgba(#4e4359,.3);
   }
 }
 
-.card-action {
+.welcome-action {
   margin: auto;
   width: 40%;
 }
@@ -110,4 +116,42 @@ $gray-text: #2f2f2f;
   text-transform: uppercase;
   border-bottom: 0.1rem solid #ece7e7;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(#d0d0d0,.47);
+}
+@media only screen and (max-width: 860px) {
+  .to-register {
+    font-size: 1.3rem;
+    padding: 0.3rem 1.3rem;
+
+  }
+
+  .hero__container {
+    width: 90%;
+  }
+
+  .welcome-action {
+    width: 45%;
+  }
+}
+@media only screen and (min-width : 320px) and (max-width : 680px) {
+  .to-register {
+    font-size: 1rem;
+    padding: 0.3rem 0.35rem;
+    letter-spacing: 0.03rem;
+  }
+
+  .welcome-card__title {
+    font-size: 3.4rem;
+  }
+
+  .welcome-card__tagline {
+    font-size: 1.15rem;
+  }
+
+  .hero__container {
+    width: 95%;
+  }
+
+  .welcome-action {
+    width: 55%;
+  }
 }

@@ -287,4 +287,14 @@ $footer-gray: #ede6e6;
     }
   }
 }
-@media only screen and (min-width : 320px) and (max-width : 580px) {}
+@media only screen and (min-width : 320px) and (max-width : 580px) {
+  .grid-nav {
+    &__right {
+      width: 60%;
+    }
+
+    &__center {
+      width: 40%;
+    }
+  }
+}
