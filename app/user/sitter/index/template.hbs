@@ -31,8 +31,8 @@
               <div class="family-info-2">
                 <p><i class="fa fa-map-pin"></i>{{ babysitter.profile.location }}</p>
                 <p>
-                  {{#each (range 0 5) as |value|}}
-                  <i class="fa fa-star"></i>
+                  {{#each (range 1 6) as |value|}}
+                  <i {{action "selectRating" babysitter value}} class="fa {{if (gte babysitter.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
                   {{/each}}
                 </p>
               </div>

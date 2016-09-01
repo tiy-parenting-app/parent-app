@@ -5,7 +5,8 @@ export default Ember.Controller.extend({
     selectRating(user, value) {
       user.get('profile').then((profile) => {
         const rating = this.store.createRecord('rating', {
-          profile, value,
+          profile,
+          value,
         })
         rating.save();
       });
@@ -13,7 +14,6 @@ export default Ember.Controller.extend({
 
     workPlease(profile) {
       profile.toggleProperty('cow');
-      profile.save();
     },
   },
 });
