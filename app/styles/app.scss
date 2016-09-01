@@ -17,7 +17,6 @@ $roboto-font-path: '../assets/';
 @import "profile-create";
 @import "conversation";
 
-
 // Flash message chip styles //
 
 .flash-messages {
@@ -33,9 +32,10 @@ $roboto-font-path: '../assets/';
 }
 
 .chip {
-  background: lighten($main, 10%);
+  background: rgba(lighten($main, 9%), .85);
   color: white;
   width: 100%;
+  margin: 0 auto;
   text-transform: uppercase;
   box-shadow: 0.1rem 0.1rem 0.3rem rgba(#afafaf,.35);
 }
@@ -45,7 +45,8 @@ $roboto-font-path: '../assets/';
   flex-direction: row;
   text-transform: uppercase;
   text-decoration: none;
-  &__item{
+
+  &__item {
     padding-left: 2rem;
   }
 }
