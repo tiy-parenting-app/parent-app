@@ -9,24 +9,16 @@
           <div class="profile-view-top__info">
             <ul class="profile-view-top__info__list">
               <li class="profile-view-top__info__list__item">
-                <span class="profile-view-top__info__list__name">{{ model.firstName }}</span>
+                <span class="profile-view-top__info__list__name">{{ model.firstName }} {{ model.lastName }}</span>
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Age:</strong> {{ model.sitterAge }}
-                <li class="profile-view-top__info__list__item">
-                  <strong>Rate:</strong>${{ model.sitterRate }}
-                </li>
-              </li>
-              <li class="profile-view-top__info__list__item">
-                <strong>Years of Experience:</strong> {{ model.experience }}
+                <strong>Rate:</strong>${{ model.sitterRate }}
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Rating:</strong>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+                  {{#each (range 1 6) as |value|}}
+                    <i {{action "selectRating" model value}} class="fa {{if (gte model.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
+                  {{/each}}
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Phone: </strong>{{ model.phoneNumber }}
@@ -48,74 +40,6 @@
           </div>
           <div class="profile-view-about__info">
             {{ model.aboutSitter }}
-          </div>
-        </div>
-        <div class="profile-view-about">
-          <div class="profile-view-about__heading">
-            Transportation and Travel
-          </div>
-          <div class="profile-view-about__info">
-            {{ model.transportation }}
-          </div>
-        </div>
-        <div class="profile-view-about">
-          <div class="profile-view-about__heading">
-            Availability
-          </div>
-          <div class="profile-view-about__info">
-            {{ model.availability }}
-          </div>
-        </div>
-        <div class="profile-view-about">
-          <div class="profile-view-about__heading">
-            Skills & Qualifications
-          </div>
-          <div class="profile-view-about__info">
-            {{ model.skills }}
-          </div>
-        </div>
-        <div class="profile-view-about">
-          <div class="profile-view-about__heading">
-            Payment
-          </div>
-          <div class="profile-view-about__info">
-            {{ model.payment }}
-          </div>
-
-
-
-
-          <div class="profile-view-about__heading">
-            Connections
-          </div>
-
-          <div class="profile-view-connections">
-            <div class="profile-view-connections__row">
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
