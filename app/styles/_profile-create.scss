@@ -66,6 +66,7 @@
 
 .add-children {
   text-align: center;
+  width: 100%;
 
   &__card {
     width: 85%;
@@ -125,6 +126,7 @@
     border-radius: 0.6rem;
     width: 25%;
     margin: 0.5rem auto 0;
+    box-shadow: 0.05rem 0.05rem 0.2rem darken(rgba(#b0adad,.33) , 2%);
 
     &:hover {
       background: lighten($main, 20%);
@@ -138,6 +140,20 @@
       text-shadow: 0.05rem 0.05rem 0.1rem darken(rgba(#a4a4a4,.53) , 2%);
       margin: 0.2rem auto 0;
       border: 0.1rem solid lighten(#a4a4a4, 6%);
+    }
+  }
+
+  &__title {
+    width: 80%;
+    margin: 0.3rem auto;
+    padding: 0.3rem 0;
+    border-bottom: 0.1rem solid #f1f0f0;
+
+    &__add {
+      font-size: 1.3rem;
+      text-shadow: 0.05rem 0.05rem 0.05rem rgba(#bbb9b9,.39);
+      color: #989797;
+      font-weight: 300;
     }
   }
 }
