@@ -1,11 +1,13 @@
 <li class="collection-item avatar">
   {{#link-to 'user.conversation.message' conversation}}
-    <img src="{{ otherparticipant.user.profile.fullUserPicUrl }}" alt="" class="circle">
-  <span class="collection__title">{{ otherparticipant.user.profile.firstName }}</span>
-  {{#with conversation.messages.firstObject as |lastMessage|}}
-    <p class="collection__first-message">{{lastMessage.text}}</p>
-  {{else}}
-    <p class="message-prompt">This is the start of something great. Send a message...</p>
-  {{/with}}
+    {{#other-participant conversation=conversation as |other|}}
+      <img src="{{ other.user.profile.fullUserPicUrl }}" alt="" class="circle">
+      <span class="collection__title">{{ other.user.profile.firstName }}</span>
+    {{/other-participant}}
+    {{#with conversation.messages.firstObject as |lastMessage|}}
+      <p class="collection__first-message">{{lastMessage.text}}</p>
+      {{else}}
+        <p class="message-prompt">This is the start of something great. Send a message...</p>
+    {{/with}}
   {{/link-to}}
 </li>
