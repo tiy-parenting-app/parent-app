@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
           this.transitionToRoute('guest.login');
         })
         .then(() => {
-          this.get('flashMessages').success('You are now registerd! Please login to continue.');
+          this.get('flashMessages').success('You are now registered! Please login to continue.');
           this.transitionToRoute('guest.login');
         })
     },

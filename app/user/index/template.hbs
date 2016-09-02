@@ -1,13 +1,13 @@
 {{#unless session.currentUser.profile.firstName}}
   <div class="container beans">
     <div class="row setup__row">
-      <div class="card-card__title col s12 center-align">Welcome to Kin. We're glad you're here. Be sure to set up you begin.</div>
+      <div class="card-card__title col s12 center-align">Welcome to Kin. We're glad you're here. Let's get started!</div>
     </div>
     <div class="select">
     <div class="select-item setup">
       {{#link-to "user.profile.edit"}}
         <div class="select-item__image">
-          <img src="{{ model.profile.fullUserPicUrl }}">
+          <img src="https://hd.unsplash.com/photo-1437943085269-6da5dd4295bf">
         </div>
         <p class="choice">
           <h5>Setup Your Profile</h5>

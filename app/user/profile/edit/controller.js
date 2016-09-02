@@ -35,6 +35,7 @@ export default Ember.Controller.extend({
           }).then((res) => res.json())
           .then((data) => {
             this.store.pushPayload(data);
+            this.get('flashMessages').success('Profile picture updated.');
           });
       })
     },
