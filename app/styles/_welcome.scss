@@ -11,7 +11,8 @@ $gray-text: #2f2f2f;
 .hero {
   width: 100%;
   position: relative;
-  min-height: 85vh;
+  min-height: 20rem;
+  height: 85vh;
   background-image: url('https://hd.unsplash.com/photo-1472057401516-4715a3148277');
   background-size: cover;
   background-position: center;
@@ -50,6 +51,8 @@ $gray-text: #2f2f2f;
   }
 
   &__tagline {
+    width: 75%;
+    margin: 0 auto;
     font-family: 'Heebo', sans-serif;
     font-size: 1.5rem;
     color: #fff;
@@ -144,6 +147,7 @@ $gray-text: #2f2f2f;
   }
 
   .welcome-card__tagline {
+    width: 95%;
     font-size: 1.15rem;
   }
 

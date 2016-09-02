@@ -1,7 +1,14 @@
 <div class="parent-sitter-banner">
   <div class="grid-container">
     <div class="parent-sitter-banner__content">
-      <p>You are viewing sitters in your area</p>
+      <p>
+        You are viewing sitters in your area.
+        {{!-- {{#if (eq session.currentUser.accountType "parent")}} --}}
+          {{#link-to "user.parent.index"}}
+          View playdates instead.
+          {{/link-to}}
+        {{!-- {{/if}} --}}
+      </p>
     </div>
   </div>
 </div>
@@ -29,7 +36,7 @@
               </p>
               <br>
               <div class="family-info-2">
-                <p><i class="fa fa-map-pin"></i> {{ babysitter.profile.location }}</p>
+                <p><i class="fa fa-map-pin"></i><span class="profile-location"> {{ babysitter.profile.location }} </span></p>
                 <p>
                   {{#each (range 1 6) as |value|}}
                   <i {{action "selectRating" babysitter value}} class="fa {{if (gte babysitter.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>

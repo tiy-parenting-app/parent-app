@@ -11,7 +11,7 @@
 }
 
 .grid-container {
-  width: 64%;
+  width: 66%;
   margin: 0 auto;
 }
 
@@ -66,25 +66,37 @@ a:hover {
 .fa-star,
 .fa-star-half-o,
 .fa-star-o {
-  color: gold;
+  color: #ffde00;
+
+  &:hover {
+    color: lighten(#ffde00, 10%);
+    cursor: pointer;
+  }
 }
 
 .fa-envelope-o,
 .fa-eye,
 .fa-thumbs-o-up {
   font-size: 2rem;
-  color: $main;
+  color: #a7a6a6;
 
   &:hover {
+    color: lighten($main, 10%);
     font-weight: bold;
+    transition: all 200ms ease-in;
+    cursor: pointer;
   }
 }
 
 .fa-map-pin {
-  color: blue;
+  color: $cool-blue;
   font-size: 1.2rem;
 }
 
+.profile-location {
+  color: darken($cool-blue, 40%);
+  font-size: 0.85rem;
+}
 
 .user-action-icons {
   width: 90%;
@@ -94,7 +106,6 @@ a:hover {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-
 
   &__item {
     align-content: center;
@@ -126,9 +137,31 @@ a:hover {
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
+
+  strong {
+    font-weight: 500;
+    color: darken($cool-blue, 20%);
+  }
 }
 
 .family-info-2 {
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 960px) {
+  .grid-container {
+    width: 88%;
+  }
+}
+@media only screen and (min-width : 320px) and (max-width : 680px) {
+  .grid-container {
+    width: 90%;
+  }
+
+  .col,
+  .m4,
+  .s12 {
+    width: 100%;
+    min-width: 100%;
+  }
 }
