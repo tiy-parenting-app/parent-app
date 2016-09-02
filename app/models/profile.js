@@ -17,6 +17,7 @@ export default DS.Model.extend({
   numberIsSecret: DS.attr('boolean'),
   isConnected: DS.attr('boolean'),
   childIsUnlocked: DS.attr('boolean'),
+  userPicExtension: DS.attr('string'),
   ratings: DS.hasMany('rating'),
   likes: DS.hasMany('like'),
 
@@ -36,7 +37,7 @@ export default DS.Model.extend({
     const userPicUrl = this.get('userPicUrl');
 
     if (userPicUrl) {
-      return `${config.DS.host}${this.get('userPicUrl')}`;
+      return `${config.DS.host}/images/${this.get('id')}.${this.get('userPicExtension')}`;
     }
 
     return 'http://placekitten.com/200/200';
