@@ -29,10 +29,10 @@
               </p>
               <br>
               <div class="family-info-2">
-                <p><i class="fa fa-map-pin"></i>{{ babysitter.profile.location }}</p>
+                <p><i class="fa fa-map-pin"></i> {{ babysitter.profile.location }}</p>
                 <p>
-                  {{#each (range 0 5) as |value|}}
-                  <i class="fa fa-star"></i>
+                  {{#each (range 1 6) as |value|}}
+                  <i {{action "selectRating" babysitter value}} class="fa {{if (gte babysitter.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
                   {{/each}}
                 </p>
               </div>
@@ -41,9 +41,9 @@
               {{#link-to 'user.sitter.view' babysitter.id class="user-action-icons__button"}}
                 <i class="fa fa-fw fa-eye user-action-icons__item"></i>
               {{/link-to}}
-              <button {{action "like"}} class="user-action-icons__button">
-                <i class="fa fa-fw fa-thumbs-o-up user-action-icons__item user-action-icons__thumbs-up"></i>
-              </button>
+              <span class="user-action-icons__button">
+                <i {{action "workPlease" babysitter }} class="fa {{if babysitter.profile.isLiked "fa-thumbs-up" "fa-thumbs-o-up"}}"></i>
+              </span>
               {{#link-to 'user.conversation.start' babysitter.id class="user-action-icons__button"}}
                 <i class="fa fa-fw fa-envelope-o user-action-icons__item"></i>
               {{/link-to}}

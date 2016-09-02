@@ -11,14 +11,14 @@
               {{#each model as |profile|}}
                 <div class="profile-view-connections__item">
                   {{#link-to "user.sitter.view" profile.id }}
-                  <div class="profile-view-connections__item__image">
-                    <img src="{{profile.profile.fullUserPicUrl}}" class="profile-view-connections__item__image__pic circle" alt="">
-                  </div>
+                    <div class="profile-view-connections__item__image">
+                      <img src="{{profile.profile.fullUserPicUrl}}" class="profile-view-connections__item__image__pic circle" alt="">
+                    </div>
                   {{/link-to}}
                   <div class="profile-view-connections__item__name duck">
                     <span class="duck__item">{{profile.profile.firstName}}</span>
-                    <span {{action "workPlease" profile}}>
-                      <span class="fa-thumbs-o-up__beans {{if profile.cow "fa fa-thumbs-up" "fa fa-thumbs-o-up"}}"></span>
+                    <span>
+                      <i {{action "workPlease" profile }} class="fa {{if profile.profile.isLiked "fa-thumbs-up" "fa-thumbs-o-up"}}"></i>
                     </span>
                     <span>
                       {{#each (range 1 6) as |value|}}

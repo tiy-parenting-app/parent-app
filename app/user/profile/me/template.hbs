@@ -20,9 +20,6 @@
               {{/if}}
               </li>
               <li class="profile-view-top__info__list__item">
-                <strong>Rating:</strong> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-              </li>
-              <li class="profile-view-top__info__list__item">
                 <strong>Phone: </strong>
                 {{model.profile.phoneNumber}}
               </li>
@@ -32,13 +29,7 @@
 
         <div class="profile-view-about">
           <div class="profile-view-about__heading">
-            Short Summary
-          </div>
-          <div class="profile-view-about__info">
-            {{model.profile.userBlurb}}
-          </div>
-          <div class="profile-view-about__heading">
-            About {{model.profile.firstName}}
+            More About {{model.profile.firstName}}
           </div>
           <div class="profile-view-about__info">
             {{model.profile.userAbout}}
