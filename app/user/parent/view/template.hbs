@@ -20,7 +20,7 @@
               <li class="profile-view-top__info__list__item">
                 <strong>Rating:</strong>
                 {{#each (range 1 6) as |value|}}
-                  <i {{action "selectRating" model value}} class="fa {{if (gte model.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
+                  <i {{action "selectRating" model value}} class="fa {{if (gte model.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
                 {{/each}}
               </li>
               <li class="profile-view-top__info__list__item">
@@ -29,7 +29,7 @@
             </ul>
           </div>
           <div class="profile-view-top__buttons">
-            <i {{action "workPlease" model }} class="fa siamese {{if model.profile.isLiked "fa-thumbs-up" "fa-thumbs-o-up"}}"></i>
+            <i {{action "workPlease" model }} class="fa siamese {{if model.isLiked "fa-thumbs-up" "fa-thumbs-o-up"}}"></i>
             {{#link-to "user.conversation.start" model.id}}
               <i class="fa fa-envelope-o cat"></i>
             {{/link-to}}
@@ -42,6 +42,14 @@
           </div>
           <div class="profile-view-about__info">
             {{ model.userAbout }}
+          </div>
+          <div class="profile-view-about__heading">
+            Children
+          </div>
+          <div class="profile-view-about__info">
+            {{#each model.children as |child|}}
+              <p>{{child.name}}, {{child.age}}</p>
+            {{/each}}
           </div>
         </div>
       </div>
