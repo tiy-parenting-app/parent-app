@@ -18,12 +18,18 @@ export default DS.Model.extend({
   isConnected: DS.attr('boolean'),
   childIsUnlocked: DS.attr('boolean'),
   ratings: DS.hasMany('rating'),
+  likes: DS.hasMany('like'),
 
   children: DS.hasMany('child'),
 
   myRating: Ember.computed.alias('ratings.lastObject'),
   myRatingValue: Ember.computed('ratings.lastObject.value', function() {
     return this.get('myRating.value') || 0;
+  }),
+
+  myLike: Ember.computed.alias('likes.lastObject'),
+  isLiked: Ember.computed('likes.lastObject.value', function() {
+    return this.get('myLike.like') || false;
   }),
 
   fullUserPicUrl: Ember.computed('userPicUrl', function() {

@@ -9,7 +9,7 @@
           <div class="profile-view-top__info">
             <ul class="profile-view-top__info__list">
               <li class="profile-view-top__info__list__item">
-                <span class="profile-view-top__info__list__name">{{ model.firstName }}</span>
+                <span class="profile-view-top__info__list__name">{{ model.firstName }} {{ model.lastName }}</span>
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Number of Kids:</strong> {{ model.numberOfChildren }}
@@ -19,11 +19,9 @@
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Rating:</strong>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+                {{#each (range 1 6) as |value|}}
+                  <i {{action "selectRating" model value}} class="fa {{if (gte model.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
+                {{/each}}
               </li>
               <li class="profile-view-top__info__list__item">
                 <strong>Phone: </strong>{{ model.phoneNumber }}
@@ -31,52 +29,27 @@
             </ul>
           </div>
           <div class="profile-view-top__buttons">
-            <button class="btn profile-view-top__buttons__btn profile-view-top__buttons__btn__like">
-              Like <i class="fa fa-thumbs-o-up"></i>
-            </button>
-            {{#link-to "user.conversation.start" model.id class="btn profile-view-top__buttons__btn"}}
-              Message <i class="fa fa-envelope-o"></i>
+            <i {{action "workPlease" model }} class="fa siamese {{if model.isLiked "fa-thumbs-up" "fa-thumbs-o-up"}}"></i>
+            {{#link-to "user.conversation.start" model.id}}
+              <i class="fa fa-envelope-o cat"></i>
             {{/link-to}}
           </div>
         </div>
 
         <div class="profile-view-about">
           <div class="profile-view-about__heading">
-            About {{ model.firstName }}
+            More About {{ model.firstName }}
           </div>
           <div class="profile-view-about__info">
             {{ model.userAbout }}
           </div>
           <div class="profile-view-about__heading">
-            Connections
+            Children
           </div>
-          <div class="profile-view-connections">
-            <div class="profile-view-connections__row">
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-              <div class="profile-view-connections__item">
-                <div class="profile-view-connections__item__image">
-                  <img src="http://placecera.com/gif/70/70" class="circle" alt="">
-                </div>
-                <div class="profile-view-connections__item__name">
-                  <span>Michael</span>
-                </div>
-              </div>
-            </div>
+          <div class="profile-view-about__info">
+            {{#each model.children as |child|}}
+              <p>{{child.name}}, {{child.age}}</p>
+            {{/each}}
           </div>
         </div>
       </div>
