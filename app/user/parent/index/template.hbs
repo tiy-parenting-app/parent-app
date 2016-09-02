@@ -1,7 +1,15 @@
 <div class="parent-sitter-banner">
   <div class="grid-container">
     <div class="parent-sitter-banner__content">
-      <p>You are viewing families in your area.</p>
+      <p>
+        You are viewing families in your area.
+
+        {{!-- {{#if (eq session.currentUser.accountType "parent")}} --}}
+          {{#link-to "user.sitter.index"}}
+          View sitters instead.
+          {{/link-to}}
+        </p>
+        {{!-- {{/if}} --}}
     </div>
   </div>
 </div>
@@ -24,12 +32,11 @@
 
             <div class="card-content family-info">
               <p>{{parent.profile.userBlurb}}</p>
-              <p>Number of kids: {{ parent.profile.numberOfChildren }}</p>
-              <p>Kids' Ages: {{ parent.profile.ageRange }}</p>
+              <p><strong>Number of kids:</strong> {{ parent.profile.children.length }}</p>
               <br>
               <div class="family-info-2">
 
-                <p><i class="fa fa-map-pin"></i> {{ parent.profile.location }}</p>
+                <p><i class="fa fa-map-pin"> </i><span class="profile-location"> {{ parent.profile.location }}</span></p>
                 <p>
                   {{#each (range 1 6) as |value|}}
                     <i {{action "selectRating" parent value}} class="fa {{if (gte parent.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>

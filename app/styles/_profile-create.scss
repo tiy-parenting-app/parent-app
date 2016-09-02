@@ -157,3 +157,27 @@
     }
   }
 }
+@media only screen and (min-width : 320px) and (max-width : 580px) {
+  .upload-section {
+    width: 80%;
+    display: inline;
+    margin: 0 auto 2rem;
+    text-align: center;
+
+    &__wrapper {
+      margin: 0 auto;
+    }
+  }
+
+  .profile-view-container {
+    width: 99%;
+  }
+
+  .create-profile__main {
+    flex-direction: column;
+  }
+
+  .form-main {
+    padding: 0 0.6rem;
+  }
+}
