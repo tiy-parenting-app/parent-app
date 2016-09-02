@@ -1,6 +1,7 @@
 <div class="container beans">
+  {{#if (eq session.currentUser.accountType "parent")}}
   <div class="row">
-    <div class="card-card__title col s12 center-align">What are you looking for today?</div>
+    <div class="card-card__title col s12 center-align">Welcome to Kin. What are you looking for today?</div>
   </div>
   <div class="row">
     <form action="#">
@@ -28,5 +29,38 @@
       </div>
     </form>
   </div>
+
+  {{else}}
+
+  <div class="row">
+    <div class="card-card__title col s12 center-align">Welcome to Kin.</div>
+  </div>
+  <div class="row">
+    <form action="#">
+      <div class="select">
+        <div class="select-item">
+          {{#link-to "user.parent.index"}}
+            <div class="select-item__image">
+              <img src="http://cachevalleyfamilymagazine.com/wp-content/uploads/2015/04/babysitting.jpg">
+            </div>
+            <p class="choice">
+              <h5>Families Looking to Hire</h5>
+            </p>
+          {{/link-to}}
+        </div>
+        <div class="select-item">
+          {{#link-to "user.profile.edit"}}
+            <div class="select-item__image">
+              <img src="{{ model.profile.fullUserPicUrl }}">
+            </div>
+            <p class="choice">
+              <h5>Edit Your Profile</h5>
+            </p>
+          {{/link-to}}
+        </div>
+      </div>
+    </form>
+  </div>
+  {{/if}}
 </div>
 {{outlet}}
