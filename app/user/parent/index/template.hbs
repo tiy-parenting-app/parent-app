@@ -19,7 +19,7 @@
       {{#each model as |parent|}}
         <div class="col s12 m4">
           <div class="card sitter-card">
-            {{#link-to "user.parent.view" parent.id}}
+            {{#link-to "user.parent.view" parent.profile.id}}
               <div class="card-image">
                 <div class="card-image__wrapper">
                   <img src="{{ parent.profile.fullUserPicUrl }}">
