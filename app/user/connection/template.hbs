@@ -10,7 +10,7 @@
             <div class="profile-view-connections__row">
               {{#each model as |profile|}}
                 <div class="profile-view-connections__item">
-                  {{#link-to "user.sitter.view" user.profile.id }}
+                  {{#link-to "user.sitter.view" profile.profile.id }}
                     <div class="profile-view-connections__item__image">
                       <img src="{{profile.profile.fullUserPicUrl}}" class="profile-view-connections__item__image__pic circle" alt="">
                     </div>
