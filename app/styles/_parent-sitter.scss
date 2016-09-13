@@ -137,6 +137,8 @@ a:hover {
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
+  font-size: 0.87rem;
+
 
   strong {
     font-weight: 500;
@@ -164,4 +166,35 @@ a:hover {
     width: 100%;
     min-width: 100%;
   }
+}
+
+.something-else {
+  white-space: normal;
+  min-height: 4.5rem;
+  max-height: 4.5rem;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1rem;
+    width: 100%;
+    height:100%;
+    // background-image: linear-gradient(rgba(#fff,0), rgba(#fff,1));
+  }
+}
+
+.star-rating {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 40%;
+  flex-grow: 1;
+}
+
+.their-location {
+  width: 60%;
+  flex-shrink: 1;
 }

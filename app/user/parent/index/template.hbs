@@ -31,17 +31,17 @@
             {{/link-to}}
 
             <div class="card-content family-info">
-              <p>{{parent.profile.userBlurb}}</p>
+              <p class="truncate">{{parent.profile.userBlurb}}</p>
               <p><strong>Number of kids:</strong> {{ parent.profile.children.length }}</p>
               <br>
               <div class="family-info-2">
 
-                <p><i class="fa fa-map-pin"> </i><span class="profile-location"> {{ parent.profile.location }}</span></p>
-                <p>
+                <div class="their-location truncate"><i class="fa fa-map-pin"> </i><span class="profile-location"> {{ parent.profile.location }}</span></div>
+                <div class="star-rating right-align">
                   {{#each (range 1 6) as |value|}}
                     <i {{action "selectRating" parent value}} class="fa {{if (gte parent.profile.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
                   {{/each}}
-                </p>
+                </div>
               </div>
             </div>
             <div class="card-action user-action-icons">
