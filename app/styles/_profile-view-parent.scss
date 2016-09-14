@@ -203,6 +203,9 @@
   margin: 0 1rem;
   font-size: 3rem;
 }
+.cider {
+  display: flex;
+}
 @media only screen and (max-width: 768px) {
   .profile-view-connections__item {
     padding: 0.3rem;
@@ -216,4 +219,21 @@
     width: calc(100%/4 - 0.2rem);
     margin: 0.5rem 0.2rem;
   }
+  .profile-view-top {
+    display: flex;
+    flex-direction: column;
+    &__buttons {
+      width: 25%;
+    }
+    &__image {
+      width: 50%;
+    }
+  }
+  .cider {
+    display: flex;
+    &__sub {
+      flex-grow: 1;
+    }
+  }
+
 }
