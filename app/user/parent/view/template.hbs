@@ -6,33 +6,29 @@
           <div class="profile-view-top__image">
             <img src="{{ model.fullUserPicUrl }}" class="profile-view-top__image__pic circle responsive-image" alt="">
           </div>
-          <div class="profile-view-top__info">
-            <ul class="profile-view-top__info__list">
-              <li class="profile-view-top__info__list__item">
-                <span class="profile-view-top__info__list__name">{{ model.firstName }} {{ model.lastName }}</span>
-              </li>
-              {{!-- <li class="profile-view-top__info__list__item">
-                <strong>Number of Kids:</strong> {{ model.numberOfChildren }}
-              </li>
-              <li class="profile-view-top__info__list__item">
-                <strong>Kids' Ages:</strong> {{ model.ageRange }}
-              </li> --}}
-              <li class="profile-view-top__info__list__item">
-                <strong>Rating:</strong>
-                {{#each (range 1 6) as |value|}}
-                  <i {{action "selectRating" model value}} class="fa {{if (gte model.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
-                {{/each}}
-              </li>
-              <li class="profile-view-top__info__list__item">
-                <strong>Phone: </strong>{{ model.phoneNumber }}
-              </li>
-            </ul>
-          </div>
-          <div class="profile-view-top__buttons">
-            <i {{action "workPlease" model }} class="fa siamese {{if model.isLiked "fa-thumbs-up" "fa-thumbs-o-up"}}"></i>
-            {{#link-to "user.conversation.start" model.id}}
-              <i class="fa fa-envelope-o cat"></i>
-            {{/link-to}}
+          <div class="cider">
+            <div class="profile-view-top__info">
+              <ul class="profile-view-top__info__list">
+                <li class="profile-view-top__info__list__item">
+                  <span class="profile-view-top__info__list__name">{{ model.firstName }} {{ model.lastName }}</span>
+                </li>
+                <li class="profile-view-top__info__list__item">
+                  <strong>Rating:</strong>
+                  {{#each (range 1 6) as |value|}}
+                    <i {{action "selectRating" model value}} class="fa {{if (gte model.myRatingValue value) "fa-star" "fa-star-o"}}"></i>
+                  {{/each}}
+                </li>
+                <li class="profile-view-top__info__list__item cider__sub">
+                  <strong>Phone: </strong>{{ model.phoneNumber }}
+                </li>
+              </ul>
+            </div>
+            <div class="profile-view-top__buttons">
+              <i {{action "workPlease" model }} class="fa siamese {{if model.isLiked "fa-thumbs-up" "fa-thumbs-o-up"}}"></i>
+              {{#link-to "user.conversation.start" model.id}}
+                <i class="fa fa-envelope-o cat"></i>
+              {{/link-to}}
+            </div>
           </div>
         </div>
 
