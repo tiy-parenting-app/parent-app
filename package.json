@@ -69,6 +69,7 @@
     "loader.js": "^4.0.1"
   },
   "dependencies": {
+    "ember-network": "^0.3.0",
     "socket.io-client": "^1.4.8"
   }
 }

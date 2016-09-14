@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import config from 'parent-app/config/environment';
+import fetch from 'ember-network/fetch';
 const {reject} = Ember.RSVP.Promise;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
