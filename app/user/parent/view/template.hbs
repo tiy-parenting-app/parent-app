@@ -11,12 +11,6 @@
               <li class="profile-view-top__info__list__item">
                 <span class="profile-view-top__info__list__name">{{ model.firstName }} {{ model.lastName }}</span>
               </li>
-              {{!-- <li class="profile-view-top__info__list__item">
-                <strong>Number of Kids:</strong> {{ model.numberOfChildren }}
-              </li>
-              <li class="profile-view-top__info__list__item">
-                <strong>Kids' Ages:</strong> {{ model.ageRange }}
-              </li> --}}
               <li class="profile-view-top__info__list__item">
                 <strong>Rating:</strong>
                 {{#each (range 1 6) as |value|}}
