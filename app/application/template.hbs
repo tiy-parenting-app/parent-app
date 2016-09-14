@@ -10,7 +10,11 @@
           {{/if}}
         </div>
         <div class="grid-nav__center">
+          {{#if session.isAuthenticated}}
+          {{#link-to "user.index"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
+          {{else}}
           {{#link-to "guest.welcome"}}<i class="fa fa-child grid-nav__logo" aria-hidden="true"></i>{{/link-to}}
+          {{/if}}
         </div>
 
         <div class="grid-nav__right">

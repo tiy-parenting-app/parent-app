@@ -139,7 +139,6 @@ a:hover {
   text-align: left;
   font-size: 0.87rem;
 
-
   strong {
     font-weight: 500;
     color: darken($cool-blue, 20%);
@@ -150,12 +149,12 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 960px) {
+@media screen and (min-width: 681px) and (max-width: 980px) {
   .grid-container {
     width: 88%;
   }
 }
-@media only screen and (min-width : 320px) and (max-width : 680px) {
+@media screen and (min-width : 320px) and (max-width : 680px) {
   .grid-container {
     width: 90%;
   }
@@ -174,6 +173,7 @@ a:hover {
   max-height: 4.5rem;
   overflow: hidden;
   position: relative;
+
   &:after {
     content: "";
     position: absolute;
@@ -182,7 +182,7 @@ a:hover {
     right: 0;
     bottom: -1rem;
     width: 100%;
-    height:100%;
+    height: 100%;
     // background-image: linear-gradient(rgba(#fff,0), rgba(#fff,1));
   }
 }

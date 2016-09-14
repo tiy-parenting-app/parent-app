@@ -120,7 +120,7 @@ $gray-text: #2f2f2f;
   border-bottom: 0.1rem solid #ece7e7;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(#d0d0d0,.47);
 }
-@media only screen and (max-width: 860px) {
+@media screen and (min-width: 681px) and (max-width: 980px) {
   .to-register {
     font-size: 1.3rem;
     padding: 0.3rem 1.3rem;

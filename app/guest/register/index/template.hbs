@@ -3,13 +3,13 @@
   <div class="card-container">
     {{#simple-form onsubmit=(action "registerUser") class="form col s12" as |inputs| }}
       <div class="row row__one">
-        <div class="card-card__title col s12 center-align">What kind of Kin are you?</div>
         <div class="switch">
+          <div class="card-card__title col s12 center-align">What kind of Kin are you?</div>
           <label>
-      Babysitter
+      <span>Babysitter</span>
       {{input id="duck" type="checkbox" name="isParent" checked=inputs.isParent}}
       <span class="lever"></span>
-      Parent
+      <span>Parent</span>
     </label>
         </div>
       </div>
@@ -28,9 +28,9 @@
           </div>
         </div>
         <div class="form-action center-align">
-          <button type="submit" class="btn col s12 card-btn btn-large"><i class="fa fa-arrow-right"></i></button>
+          <button type="submit" class="btn col s12 card-btn btn-large">Create Account</button>
           {{#link-to 'guest.login'}}
-            <div class="btn back-btn">Already have an account?</div>
+            <div class="btn forgot-btn">Already have an account?</div>
           {{/link-to}}
         </div>
       </div>

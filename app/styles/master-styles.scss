@@ -58,14 +58,16 @@ main {
 .card-container {
   background: #fff;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (min-width: 651px) and (max-width: 980px) {
   .container {
     width: 97%;
-    padding-top: 0;
+    padding-top: 1rem;
   }
 }
-@media only screen and (min-width : 320px) and (max-width : 580px) {
+@media screen and (min-width: 320px) and (max-width: 650px) {
   .container {
     width: 100%;
+    padding-top: 1rem;
+
   }
 }
