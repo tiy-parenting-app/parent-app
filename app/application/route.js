@@ -40,6 +40,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     }
   },
 
-  sessionInvalidated() {
-  },
+  // sessionInvalidated() {
+  // },
 });
